@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Boletim War Era • 14/07/2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #151a1e;
+            --green: #009c3b;
+            --yellow: #ffdf00;
+            --blue: #002776;
+            --text: #e5e5e5;
+            --card: #141414;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Saira', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #002f1e, #1a1a1a);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 6px solid var(--green);
+        }
+        
+        .logo { font-size: 2.8rem; font-weight: 700; color: #ffffff; }
+        .subtitle { font-size: 1.15rem; color: var(--yellow); margin-top: 0.5rem; }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 2.5rem;
+        }
+        
+        .section { margin-bottom: 2.8rem; }
+        .section h2 { padding-bottom: 0.5rem; margin-bottom: 1.2rem; border-bottom: 3px solid; }
+        
+        /* Definição de cores por seção (afeta o h2 e os cards dentro dela) */
+        .guerras { color: var(--green); }
+        .guerras h2 { border-color: var(--green); }
+
+        .politica { color: var(--white); }
+        .politica h2 { border-color: var(--white); }
+
+        .economia { color: var(--yellow); }
+        .economia h2 { border-color: var(--yellow); }
+
+        .memes { color: var(--blue); }
+        .memes h2 { border-color: var(--blue); }
+        
+        /* Card genérico que herda a cor do elemento pai */
+        .card {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 1.6rem;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid currentColor;
+            color: var(--text); /* Mantém o texto claro padrão */
+        }
+        
+        .sidebar { 
+            background: var(--card); 
+            padding: 1.8rem; 
+            border-radius: 8px; 
+            height: fit-content; 
+            border: 1px solid #333;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Sobrescrita para os cards da sidebar usarem a cor inline do style="" */
+        .sidebar .card {
+            border-left-color: currentColor;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .close-sidebar {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .drawer-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 2px solid var(--yellow);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.7);
+            z-index: 990;
+        }
+        
+        footer { text-align: center; padding: 2.5rem 1rem; opacity: 0.75; font-size: 0.95rem; border-top: 1px solid #222; }
+        a { color: var(--yellow); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .country-display { display: inline-flex; align-items: center; gap: 6px; vertical-align: middle; color: inherit; }
+        .country-display img { width: auto; height: 19px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+        .country-display .name { font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            .drawer-toggle { display: flex; }
+            .sidebar {
+                position: fixed;
+                top: 0; right: 0;
+                width: 280px; height: 100vh;
+                box-sizing: border-box;
+                z-index: 995;
+                border-radius: 0; border: none;
+                border-left: 1px solid #333;
+                transform: translateX(100%);
+                overflow-y: auto;
+            }
+            .sidebar.active { transform: translateX(0); }
+            .sidebar-overlay.active { display: block; }
+            .close-sidebar { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🇧🇷 BOLETIM WAR ERA</div>
+        <p class="subtitle">Edição #1 atualizada em 12 de Julho de 2026 • Informando o Brasil ontem, hoje e amanhã</p>
+    </header>
+
+    <button class="drawer-toggle" id="openDrawer" title="Resumo da Semana">📌</button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="container">
+        <div class="main">
+            <!-- Guerras (Cards Verdes) -->
+            <div class="section guerras">
+                <h2>⚔️ Guerras</h2>
+                <div class="card" style="color: var(--green);">
+                    <h3>Américas</h3>
+                    <p>10/07 - [br] X [us]</p>
+                </div>
+                <div class="card" style="color: var(--green);">
+                    <h3>Europa</h3>
+                    <p>10/07 - [br] X [pl]</p>
+                    <p>07/07 - [br] X [lt] &emsp; <a href="https://app.warera.io/article/6a4d0f72110a2cc2aaf3884b" target="_blank" rel="noopener">Brazil declares total war against Lithuania</a></p>
+                </div>
+            </div>
+
+            <!-- Política (Cards Brancos) -->
+            <div class="section politica">
+                <h2>⚖️ Política</h2>
+                <div class="card">
+                    <p>02/07 - <a href="https://app.warera.io/country/6813b6d546e731854c7ac82f/government" target="_blank" rel="noopener">[br] elege seu governo.</a></p>
+                </div>
+            </div>
+
+            <!-- Economia (Cards Amarelos) -->
+            <div class="section economia">
+                <h2>💰 Economia</h2>
+                <div class="card" style="color: var(--yellow);">
+                    <p>12/07 - <a href="https://app.warera.io/article/6a4f304a585d9590b1cdbcd3" target="_blank" rel="noopener">Comunicado de Renta de Región: Colombia - Brasil</a></p>
+                </div>
+                <div class="card" style="color: var(--yellow);">
+                    <p>11/07 - <a href="https://app.warera.io/country/6813b6d546e731854c7ac82f/law/6a51a20522c0d30eb09f1485" target="_blank" rel="noopener">[br] aumenta imposto de renda para 5%</a></p>
+                </div>
+            </div>
+
+            <!-- Memes (Cards Azuis) -->
+            <div class="section memes" >
+                <h2>😂 Memes & Comunidade</h2>
+                <div class="card" style="color: var(--blue);">
+                    <p>12/07 - <a href="https://app.warera.io/article/6a5392086ec2c3e0ce31e3c9" target="_blank" rel="noopener">The Lithuania & Gnome! (BrMemes)</a></p>
+                </div>
+                <div class="card" style="color: var(--blue);">
+                    <p>09/07 - <a href="https://app.warera.io/article/6a4f1579a184797595a3d2cb" target="_blank" rel="noopener">Message for Lithuania (BrMemes)</a></p>
+                </div>
+                <div class="card" style="color: var(--blue);">
+                    <p>05/07 - <a href="https://app.warera.io/article/6a4db27cacf9f61f1b59ec81" target="_blank" rel="noopener">"Detestei conversa com o Rafael!" (Br Memes)</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebarDrawer">
+            <div class="sidebar-header">
+                <h2 style="color: var(--yellow); margin-top:0;">📌 Resumo da Semana</h2>
+                <button class="close-sidebar" id="closeDrawer" title="Fechar">✕</button>
+            </div>
+            <h3 style="color: var(--white); margin-top:0; text-align: center;">01/07 - 12/07</h3> 
+            <div style="max-height: 70vh; overflow-y: auto;">
+                <div class="card" style="color: var(--yellow);">
+                    <strong>Diplomacia</strong><br>
+                    11/07 - [money] Envio de 2.1 do [br] para [no]
+                </div>
+                <div class="card" style="color: var(--green);">
+                    <strong>Diplomacia</strong><br>
+                    07/07 - [pact] Pacto Defensivo entre [br] e [ru]
+                </div>
+                <div class="card" style="color: var(--white);">
+                    <strong>Diplomacia</strong><br>
+                    06/07 - [peace] Paz entre [br] e [ec]
+                </div>
+                <div class="card" style="color: var(--yellow);">
+                    05/07 - [money] Envio de 2.1 para o [br] da [no]
+                </div>
+                <div class="card" style="color: var(--white);">
+                    <strong>Diplomacia</strong><br>
+                    04/07 - [peace] Paz entre [br] e [pe]
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>BR Boletim War Era • Comunidade Brasileira • GiuGiu • 2026</footer>
+
+    <script>
+        const countries = {
+            br: { name: "Brasil", color: "#009c3b", url: "https://app.warera.io/country/6813b6d546e731854c7ac82f" },
+            us: { name: "Estados Unidos", color: "#0A3161", url: "https://app.warera.io/country/6813b6d446e731854c7ac7e5" },
+            pl: { name: "Polônia", color: "#DC143C", url: "https://app.warera.io/country/6813b6d446e731854c7ac7ae" },
+            lt: { name: "Lituânia", color: "#006A44", url: "https://app.warera.io/country/6813b6d446e731854c7ac7b8" },
+            no: { name: "Noruega", color: "#BA0C2F", url: "https://app.warera.io/country/6813b6d546e731854c7ac668" },
+            ru: { name: "Rússia", color: "#1C3578", url: "https://app.warera.io/country/6813b6d546e731854c7ac868" },
+            ec: { name: "Equador", color: "#FFDD00", url: "https://app.warera.io/country/6813b6d546e731854c7ac855" },
+            pe: { name: "Perú", color: "#D91023", url: "https://app.warera.io/country/6813b6d546e731854c7ac83f" }
+        };
+
+        const icons = {
+            war: "🔥", peace: "🕊️", pact: "🛡️", binoculars: "🔭", money: "💰",
+            alliance: "🤝", alert: "⚠️", victory: "🏆", sword: "⚔️", sports: "⚽",
+            international: "🌐", map: "🗺️", person: "✨", business: "📈", crisis: "💥",
+            discovery: "💡", debate: "🗣️", agreement: "🤝", scandal: "💣", news: "🚨"
+        };
+
+        function processContent() {
+            const cards = document.querySelectorAll('.card, p, h3');
+            cards.forEach(card => {
+                let html = card.innerHTML;
+                
+                html = html.replace(/\[([a-z]{2})\]/g, (match, code) => {
+                    const country = countries[code];
+                    if (!country) return match;
+                    
+                    const flagUrl = `https://app.warera.io/images/flags/${code}.svg`;
+                    const innerStructure = `<img src="${flagUrl}" alt="${country.name}" loading="lazy"><span class="name" style="color: ${country.color};">${country.name}</span>`;
+                    
+                    const index = card.innerHTML.indexOf(match);
+                    const beforeText = card.innerHTML.substring(0, index);
+                    const insideLink = beforeText.lastIndexOf('<a') > beforeText.lastIndexOf('</a>');
+
+                    if (insideLink) {
+                        return `<span class="country-display">${innerStructure}</span>`;
+                    } else {
+                        return `<a href="${country.url}" target="_blank" rel="noopener" class="country-display" style="text-decoration:none;">${innerStructure}</a>`;
+                    }
+                });
+
+                html = html.replace(/\[([a-z]+)\]/g, (match, key) => {
+                    return icons[key] ? `${icons[key]} ` : match;
+                });
+
+                card.innerHTML = html;
+            });
+        }
+
+        const openBtn = document.getElementById('openDrawer');
+        const closeBtn = document.getElementById('closeDrawer');
+        const sidebar = document.getElementById('sidebarDrawer');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function toggleDrawer() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        openBtn.addEventListener('click', toggleDrawer);
+        closeBtn.addEventListener('click', toggleDrawer);
+        overlay.addEventListener('click', toggleDrawer);
+
+        window.addEventListener('DOMContentLoaded', processContent);
+    </script>
+</body>
+</html>
