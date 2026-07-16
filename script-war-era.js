@@ -25,7 +25,7 @@ const countriesDatabase = {
     gt: { name: "Guatemala", color: "#4997D0", url: "https://app.warera.io/country/6813b6d546e731854c7ac8b8" },
     mx: { name: "México", color: "#006847", url: "https://app.warera.io/country/6813b6d446e731854c7ac7f8" },
     ar: { name: "Argentina", color: "#6CACE4", url: "https://app.warera.io/country/6813b6d546e731854c7ac832" },
-    pe: { name: "Perú", color: "#D91023", url: "https://app.warera.io/country/6813b6d546e731854c7ac83f" }
+    pe: { name: "Perú", color: "#D91023", url: "https://app.warera.io/country/6813b6d546e731854c7ac83f" },
 
     // Europa
     pl: { name: "Polônia", color: "#DC143C", url: "https://app.warera.io/country/6813b6d446e731854c7ac7ae" },
