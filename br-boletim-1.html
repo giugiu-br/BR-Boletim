@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BR Boletim War Era • 14/07/2026</title>
+    <title>BR Boletim War Era • 15/07/2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -13,6 +13,8 @@
             --blue: #002776;
             --text: #e5e5e5;
             --card: #141414;
+            --black: #000000;
+            --red: #880808;
             --white: #FFFFFF;
         }
         
@@ -47,7 +49,7 @@
         .section { margin-bottom: 2.8rem; }
         .section h2 { padding-bottom: 0.5rem; margin-bottom: 1.2rem; border-bottom: 3px solid; }
         
-        /* Definição de cores por seção (afeta o h2 e os cards dentro dela) */
+        /* Definição de cores das seções principais */
         .guerras { color: var(--green); }
         .guerras h2 { border-color: var(--green); }
 
@@ -60,14 +62,14 @@
         .memes { color: var(--blue); }
         .memes h2 { border-color: var(--blue); }
         
-        /* Card genérico que herda a cor do elemento pai */
+        /* O card herda a cor da seção (main) ou do próprio elemento (sidebar) */
         .card {
             background: var(--card);
             border-radius: 8px;
             padding: 1.6rem;
             margin-bottom: 1.2rem;
             border-left: 5px solid currentColor;
-            color: var(--text); /* Mantém o texto claro padrão */
+            color: var(--text);
         }
         
         .sidebar { 
@@ -77,11 +79,6 @@
             height: fit-content; 
             border: 1px solid #333;
             transition: transform 0.3s ease-in-out;
-        }
-
-        /* Sobrescrita para os cards da sidebar usarem a cor inline do style="" */
-        .sidebar .card {
-            border-left-color: currentColor;
         }
 
         .sidebar-header {
@@ -159,7 +156,11 @@
 
     <header>
         <div class="logo">🇧🇷 BOLETIM WAR ERA</div>
-        <p class="subtitle">Edição #1 atualizada em 14 de Julho de 2026 • Informando o Brasil ontem, hoje e amanhã</p>
+        <p class="subtitle">Edição #1 atualizada em 15 de Julho de 2026 • Informando o Brasil ontem, hoje e amanhã</p>
+        <!-- Barra de Navegação Automatizada -->
+        <div class="edition-nav" id="editionNav" style="margin-top: 1.2rem; font-size: 1rem; display: flex; justify-content: center; gap: 2rem; opacity: 0.9;">
+            <!-- O JS vai injetar os links aqui dinamicamente -->
+        </div>
     </header>
 
     <button class="drawer-toggle" id="openDrawer" title="Resumo da Semana">📌</button>
@@ -167,55 +168,55 @@
 
     <div class="container">
         <div class="main">
-            <!-- Guerras (Cards Verdes) -->
+            <!-- Guerras -->
             <div class="section guerras">
                 <h2>⚔️ Guerras</h2>
-                <div class="card" style="color: var(--green);">
+                <div class="card">
                     <h3>Américas</h3>
                     <p>10/07 - [br] X [us]</p>
                 </div>
-                <div class="card" style="color: var(--green);">
+                <div class="card">
                     <h3>Europa</h3>
                     <p>10/07 - [br] X [pl]</p>
                     <p>07/07 - [br] X [lt] &emsp; <a href="https://app.warera.io/article/6a4d0f72110a2cc2aaf3884b" target="_blank" rel="noopener">Brazil declares total war against Lithuania</a></p>
                 </div>
             </div>
 
-            <!-- Política (Cards Brancos) -->
+            <!-- Política -->
             <div class="section politica">
-                <h2>⚖️ Política</h2>
+                <h2>⚖️ Política</h2>              
                 <div class="card">
                     <p>02/07 - <a href="https://app.warera.io/country/6813b6d546e731854c7ac82f/government" target="_blank" rel="noopener">[br] elege seu governo.</a></p>
                 </div>
             </div>
 
-            <!-- Economia (Cards Amarelos) -->
+            <!-- Economia -->
             <div class="section economia">
                 <h2>💰 Economia</h2>
-                <div class="card" style="color: var(--yellow);">
+                <div class="card">
                     <p>12/07 - <a href="https://app.warera.io/article/6a4f304a585d9590b1cdbcd3" target="_blank" rel="noopener">Comunicado de Renta de Región: Colombia - Brasil</a></p>
                 </div>
-                <div class="card" style="color: var(--yellow);">
+                <div class="card">
                     <p>11/07 - <a href="https://app.warera.io/country/6813b6d546e731854c7ac82f/law/6a51a20522c0d30eb09f1485" target="_blank" rel="noopener">[br] aumenta imposto de renda para 5%</a></p>
                 </div>
             </div>
 
-            <!-- Memes (Cards Azuis) -->
-            <div class="section memes" >
+            <!-- Memes -->
+            <div class="section memes">
                 <h2>😂 Memes & Comunidade</h2>
-                <div class="card" style="color: var(--blue);">
+                <div class="card">
                     <p>12/07 - <a href="https://app.warera.io/article/6a5392086ec2c3e0ce31e3c9" target="_blank" rel="noopener">The Lithuania & Gnome! (BrMemes)</a></p>
                 </div>
-                <div class="card" style="color: var(--blue);">
+                <div class="card">
                     <p>09/07 - <a href="https://app.warera.io/article/6a4f1579a184797595a3d2cb" target="_blank" rel="noopener">Message for Lithuania (BrMemes)</a></p>
                 </div>
-                <div class="card" style="color: var(--blue);">
+                <div class="card">
                     <p>05/07 - <a href="https://app.warera.io/article/6a4db27cacf9f61f1b59ec81" target="_blank" rel="noopener">"Detestei conversa com o Rafael!" (Br Memes)</a></p>
                 </div>
             </div>
         </div>
 
-        <!-- Sidebar -->
+        <!-- Sidebar (LIVRE DE CORES E EMOJIS MANUAIS!) -->
         <div class="sidebar" id="sidebarDrawer">
             <div class="sidebar-header">
                 <h2 style="color: var(--yellow); margin-top:0;">📌 Resumo da Semana</h2>
@@ -223,61 +224,165 @@
             </div>
             <h3 style="color: var(--white); margin-top:0; text-align: center;">01/07 - 12/07</h3> 
             <div style="max-height: 70vh; overflow-y: auto;">
-                <div class="card" style="color: var(--yellow);">
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
+                    12/07 - [peace] Paz entre [br] e [fr]
+                </div>
+                <div class="card">
+                    <strong>Copa do Mundo</strong><br>
+                    11/07 - [sport] Quartas: [ch] é eliminada pelo [ar] por 3 x 1
+                </div>                                
+                <div class="card">
                     <strong>Diplomacia</strong><br>
                     11/07 - [money] Envio de 2.1 do [br] para [no]
                 </div>
-                <div class="card" style="color: var(--green);">
+                <div class="card">
+                    <strong>Copa do Mundo</strong><br>
+                    11/07 - [sport] Quartas: [no] é eliminada pelo [uk] (Inglaterra) por 2 x 1
+                </div>
+                <div class="card">
+                    <strong>Copa do Mundo</strong><br>
+                    10/07 - [sport] Quartas: [be] é eliminada pela [es] por 2 x 1
+                </div>                                 
+                <div class="card">
+                    <strong>Guerra</strong><br>
+                    10/07 - [war] [us] declarou guerra ao [br]
+                </div>
+                <div class="card">
+                    <strong>Copa do Mundo</strong><br>
+                    09/07 - [sport] Quartas: [ma] é eliminada pela [fr] por 2 x 0
+                </div>                                  
+                <div class="card">
+                    <strong>Internacional</strong><br>
+                    09/07 - [noalliance] <a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa </a> expulsa [mx]
+                </div>             
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
+                    09/07 - [nopact] Fim do Pacto Defensivo entre [br] e [ir]
+                </div>                 
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
+                    08/07 - [pact] Pacto Defensivo entre [br] e [ir]
+                </div>                
+                <div class="card">
                     <strong>Diplomacia</strong><br>
                     07/07 - [pact] Pacto Defensivo entre [br] e [ru]
                 </div>
-                <div class="card" style="color: var(--white);">
+                <div class="card">
                     <strong>Diplomacia</strong><br>
                     06/07 - [peace] Paz entre [br] e [ec]
                 </div>
-                <div class="card" style="color: var(--yellow);">
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
+                    05/07 - [money] Envio de 5 para a [no] do [br]
+                </div>                
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
                     05/07 - [money] Envio de 2.1 para o [br] da [no]
                 </div>
-                <div class="card" style="color: var(--white);">
+                <div class="card">
+                    <strong>Copa do Mundo</strong><br>
+                    05/07 - [sport] Oitavas: [br] é eliminado pela [no] por 2 x 1
+                </div>                
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
+                    05/07 - [pact] Pacto Defensivo entre [br] e [mx]
+                </div>                
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
+                    04/07 - [nopact] Fim do Pacto Defensivo entre [br] e [mx]
+                </div>                
+                <div class="card">
                     <strong>Diplomacia</strong><br>
                     04/07 - [peace] Paz entre [br] e [pe]
+                </div>
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
+                    03/07 - [pact] Pacto Defensivo entre [br] e [mx]
+                </div>
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
+                    02/07 - [nopact] Fim do Pacto Defensivo entre [br] e [gt]
+                </div>
+                <div class="card">
+                    <strong>Diplomacia</strong><br>
+                    02/07 - [money] Envio de 2000 do [br] para [pe]
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>BR Boletim War Era • Comunidade Brasileira • GiuGiu • 2026</footer>
+    <footer>BR Boletim War Era • Comunidade Brasileira • 2026</footer>
 
+<!-- 1. Dados locais de backup (Redundância) caso o script externo não carregue -->
     <script>
-        const countries = {
-            br: { name: "Brasil", color: "#009c3b", url: "https://app.warera.io/country/6813b6d546e731854c7ac82f" },
-            us: { name: "Estados Unidos", color: "#0A3161", url: "https://app.warera.io/country/6813b6d446e731854c7ac7e5" },
-            pl: { name: "Polônia", color: "#DC143C", url: "https://app.warera.io/country/6813b6d446e731854c7ac7ae" },
-            lt: { name: "Lituânia", color: "#006A44", url: "https://app.warera.io/country/6813b6d446e731854c7ac7b8" },
-            no: { name: "Noruega", color: "#BA0C2F", url: "https://app.warera.io/country/6813b6d546e731854c7ac668" },
-            ru: { name: "Rússia", color: "#1C3578", url: "https://app.warera.io/country/6813b6d546e731854c7ac868" },
-            ec: { name: "Equador", color: "#FFDD00", url: "https://app.warera.io/country/6813b6d546e731854c7ac855" },
-            pe: { name: "Perú", color: "#D91023", url: "https://app.warera.io/country/6813b6d546e731854c7ac83f" }
+        // Backup rápido dos países principais deste boletim específico
+        var countries = {
+            br: { name: "Brasil", color: "#009c3b", url: "https://app.warera.io/country/6813b6d546e731854c7ac82f" }
         };
+        var icons = {
+            money: { emoji: "💰", color: "var(--yellow)" }
+        };
+    </script>
 
-        const icons = {
-            war: "🔥", peace: "🕊️", pact: "🛡️", binoculars: "🔭", money: "💰",
-            alliance: "🤝", alert: "⚠️", victory: "🏆", sword: "⚔️", sports: "⚽",
-            international: "🌐", map: "🗺️", person: "✨", business: "📈", crisis: "💥",
-            discovery: "💡", debate: "🗣️", agreement: "🤝", scandal: "💣", news: "🚨"
-        };
+    <!-- 2. Importa o banco de dados global (que vai sobrescrever e expandir o backup acima) -->
+    <script src="script-war-era.js"></script>
+
+    <!-- 3. Motor de renderização da página (este pode rodar local ou você pode mover para o externo no futuro) -->
+    <script>
+        // FUNÇÕES DE CONTINGÊNCIA (Conversão ISO -> Emoji)
+        function getFlagEmoji(countryCode) {
+            const codePoints = countryCode
+                .toUpperCase()
+                .split('')
+                .map(char => 127397 + char.charCodeAt(0));
+            return String.fromCodePoint(...codePoints);
+        }
+
+        function handleFlagError(imgElement, countryCode) {
+            const emoji = getFlagEmoji(countryCode);
+            
+            // Cria um contêiner de texto leve com o emoji para substituir a imagem quebrada
+            const emojiSpan = document.createElement('span');
+            emojiSpan.style.fontSize = '1.3rem';
+            emojiSpan.style.marginRight = '6px';
+            emojiSpan.style.display = 'inline-block';
+            emojiSpan.style.verticalAlign = 'middle';
+            emojiSpan.innerText = emoji;
+            
+            if (imgElement.parentNode) {
+                imgElement.parentNode.replaceChild(emojiSpan, imgElement);
+            }
+        }
 
         function processContent() {
+            // Garante que temos as variáveis mesmo se o script-war-era.js falhar 100%
+            const activeCountries = window.countries || countries;
+            const activeIcons = window.icons || icons;
+
+            // Cores das seções principais
+            const sectionCards = document.querySelectorAll('.main .section');
+            sectionCards.forEach(section => {
+                const sectionColor = window.getComputedStyle(section).color;
+                const cards = section.querySelectorAll('.card');
+                cards.forEach(card => {
+                    card.style.borderLeftColor = sectionColor;
+                });
+            });
+
             const cards = document.querySelectorAll('.card, p, h3');
             cards.forEach(card => {
                 let html = card.innerHTML;
                 
+                // Processamento dos Países
                 html = html.replace(/\[([a-z]{2})\]/g, (match, code) => {
-                    const country = countries[code];
+                    const country = activeCountries[code];
                     if (!country) return match;
                     
                     const flagUrl = `https://app.warera.io/images/flags/${code}.svg`;
-                    const innerStructure = `<img src="${flagUrl}" alt="${country.name}" loading="lazy"><span class="name" style="color: ${country.color};">${country.name}</span>`;
+
+                    // Estrutura HTML que chama a contingência caso o link do .svg dê erro (como 404 ou queda de servidor)
+                    const innerStructure = `<img src="${flagUrl}" alt="${country.name}" loading="lazy" onerror="handleFlagError(this, '${code}')"><span class="name" style="color: ${country.color};">${country.name}</span>`;
                     
                     const index = card.innerHTML.indexOf(match);
                     const beforeText = card.innerHTML.substring(0, index);
@@ -290,14 +395,63 @@
                     }
                 });
 
+                // Processamento dos Ícones
                 html = html.replace(/\[([a-z]+)\]/g, (match, key) => {
-                    return icons[key] ? `${icons[key]} ` : match;
+                    const iconConfig = activeIcons[key];
+                    if (iconConfig) {
+                        if (card.closest('.sidebar')) {
+                            card.style.borderLeftColor = iconConfig.color;
+                        }
+                        return `${iconConfig.emoji} `;
+                    }
+                    return match;
                 });
 
                 card.innerHTML = html;
             });
         }
 
+        function setupNavigation() {
+            const navContainer = document.getElementById('editionNav');
+            if (!navContainer) return;
+
+            const path = window.location.pathname;
+            const match = path.match(/br-boletim-(\d+)/);
+            const currentEdition = match ? parseInt(match[1]) : 1;
+            
+            const prevEdition = currentEdition - 1;
+            const nextEdition = currentEdition + 1;
+            
+            const prevUrl = `br-boletim-${prevEdition}.html`;
+            const nextUrl = `br-boletim-${nextEdition}.html`;
+
+            let prevHTML = `<span style="color: #666; cursor: not-allowed; user-select: none;">« Anterior</span>`;
+            if (prevEdition > 0) {
+                prevHTML = `<a href="${prevUrl}" style="color: var(--yellow); font-weight: 700; text-decoration: none;">« Edição #${prevEdition}</a>`;
+            }
+
+            let nextHTML = `<span id="nextEditionLink" style="color: #666; cursor: not-allowed; user-select: none;">Próxima »</span>`;
+            navContainer.innerHTML = `${prevHTML} <span style="color: var(--yellow);">•</span> ${nextHTML}`;
+
+            fetch(nextUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        const nextPlaceholder = document.getElementById('nextEditionLink');
+                        if (nextPlaceholder) {
+                            const activeLink = document.createElement('a');
+                            activeLink.href = nextUrl;
+                            activeLink.style.color = "var(--yellow)";
+                            activeLink.style.fontWeight = "700";
+                            activeLink.style.textDecoration = "none";
+                            activeLink.innerText = `Edição #${nextEdition} »`;
+                            nextPlaceholder.parentNode.replaceChild(activeLink, nextPlaceholder);
+                        }
+                    }
+                })
+                .catch(err => console.log("Próxima edição ainda não publicada."));
+        }
+
+        // Drawer
         const openBtn = document.getElementById('openDrawer');
         const closeBtn = document.getElementById('closeDrawer');
         const sidebar = document.getElementById('sidebarDrawer');
@@ -308,11 +462,15 @@
             overlay.classList.toggle('active');
         }
 
-        openBtn.addEventListener('click', toggleDrawer);
-        closeBtn.addEventListener('click', toggleDrawer);
-        overlay.addEventListener('click', toggleDrawer);
+        if(openBtn) openBtn.addEventListener('click', toggleDrawer);
+        if(closeBtn) closeBtn.addEventListener('click', toggleDrawer);
+        if(overlay) overlay.addEventListener('click', toggleDrawer);
 
-        window.addEventListener('DOMContentLoaded', processContent);
+        window.addEventListener('DOMContentLoaded', () => {
+            processContent();
+            setupNavigation();
+        });
+
     </script>
 </body>
 </html>
