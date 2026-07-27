@@ -53,7 +53,7 @@ const countriesDatabase = {
     sr: { name: "Suriname", color: "#377E3F", url: "" },
     tt: { name: "Trinidad e Tobago", color: "#DA291C", url: "" },
     uy: { name: "Uruguai", color: "#0081C8", url: "" },
-    ve: { name: "Venezuela", color: "#FCD116", url: "" },
+    ve: { name: "Venezuela", color: "#FCD116", url: "https://app.warera.io/country/6813b6d546e731854c7ac858" },
     
     // Europa
     al: { name: "Albânia", color: "#E41B13", url: "" },
