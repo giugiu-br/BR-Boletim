@@ -2,7 +2,7 @@
 const weeklyEvents = [
 
     { date: "2026-07-28", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [ru]' },
-    { date: "2026-07-22", type: "Diplomacia", tag: "[money]", text: "Envio de 660 para a [co] do [br]" },
+    { date: "2026-07-28", type: "Diplomacia", tag: "[money]", text: "Envio de 660 para a [co] do [br]" },
     { date: "2026-07-28", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [ht]' },
     { date: "2026-07-28", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [bz]' },
     { date: "2026-07-28", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [bs]' },
