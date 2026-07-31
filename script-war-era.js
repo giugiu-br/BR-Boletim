@@ -157,7 +157,7 @@ const countriesDatabase = {
     ml: { name: "Mali", color: "#14B53A", url: "" },
     ma: { name: "Marrocos", color: "#006233", url: "https://app.warera.io/country/6813b6d546e731854c7ac848" },
     mu: { name: "Maurício", color: "#EA1C24", url: "" },
-    mr: { name: "Mauritânia", color: "#00A95C", url: "" },
+    mr: { name: "Mauritânia", color: "#00A95C", url: "https://app.warera.io/country/6873d0ea1758b40e712b5eed" },
     mz: { name: "Moçambique", color: "#009639", url: "" },
     na: { name: "Namíbia", color: "#003580", url: "" },
     ne: { name: "Níger", color: "#E05206", url: "" },
