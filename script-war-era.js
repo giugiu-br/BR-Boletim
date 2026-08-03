@@ -33,7 +33,7 @@ const countriesDatabase = {
     cr: { name: "Costa Rica", color: "#002F6C", url: "https://app.warera.io/country/6813b6d546e731854c7ac8a9" },
     cu: { name: "Cuba", color: "#CC1823", url: "" },
     dm: { name: "Dominica", color: "#006B3F", url: "" },
-    es: { name: "El Salvador", color: "#0047AB", url: "" },
+    sv: { name: "El Salvador", color: "#0047AB", url: "" },
     ec: { name: "Equador", color: "#FFDD00", url: "https://app.warera.io/country/6813b6d546e731854c7ac855" },    
     us: { name: "Estados Unidos", color: "#0A3161", url: "https://app.warera.io/country/6813b6d446e731854c7ac7e5" },
     gd: { name: "Granada", color: "#007A5E", url: "" },    
