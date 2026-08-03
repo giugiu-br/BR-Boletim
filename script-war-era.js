@@ -7,6 +7,7 @@ const iconsDatabase = {
     nopact:      { emoji: "🛡️❌", color: "var(--red)" },
     binoculars:  { emoji: "🔭", color: "var(--white)" },
     money:       { emoji: "💰", color: "var(--yellow)" },
+    nomoney:       { emoji: "💰❌", color: "var(--red)" },
     alliance:    { emoji: "🤝", color: "var(--green)" },
     noalliance:  { emoji: "🤝❌", color: "var(--red)" },
     alert:       { emoji: "⚠️", color: "var(--yellow)" },
