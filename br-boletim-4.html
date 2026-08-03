@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Boletim War Era • 03/08/2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #151a1e;
+            --green: #009c3b;
+            --yellow: #ffdf00;
+            --blue: #002776;
+            --text: #e5e5e5;
+            --card: #141414;
+            --black: #000000;
+            --red: #880808;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Saira', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #002f1e, #1a1a1a);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 6px solid var(--green);
+        }
+        
+        .logo { font-size: 2.8rem; font-weight: 700; color: #ffffff; }
+        .subtitle { font-size: 1.15rem; color: var(--yellow); margin-top: 0.5rem; }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 2.5rem;
+        }
+        
+        .section { margin-bottom: 2.8rem; }
+        .section h2 { padding-bottom: 0.5rem; margin-bottom: 1.2rem; border-bottom: 3px solid; }
+        
+        /* Definição de cores das seções principais */
+        .guerras { color: var(--green); }
+        .guerras h2 { border-color: var(--green); }
+
+        .politica { color: var(--white); }
+        .politica h2 { border-color: var(--white); }
+
+        .economia { color: var(--yellow); }
+        .economia h2 { border-color: var(--yellow); }
+
+        .memes { color: var(--blue); }
+        .memes h2 { border-color: var(--blue); }
+        
+        /* O card herda a cor da seção (main) ou do próprio elemento (sidebar) */
+        .card {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 1.6rem;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid currentColor;
+            color: var(--text);
+        }
+        
+        .sidebar { 
+            background: var(--card); 
+            padding: 1.8rem; 
+            border-radius: 8px; 
+            height: fit-content; 
+            border: 1px solid #333;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .close-sidebar {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .drawer-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 2px solid var(--yellow);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.7);
+            z-index: 990;
+        }
+        
+        footer { text-align: center; padding: 2.5rem 1rem; opacity: 0.75; font-size: 0.95rem; border-top: 1px solid #222; }
+        a { color: var(--yellow); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .country-display { display: inline-flex; align-items: center; gap: 6px; vertical-align: middle; color: inherit; }
+        .country-display img { width: auto; height: 19px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+        .country-display .name { font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            .drawer-toggle { display: flex; }
+            .sidebar {
+                position: fixed;
+                top: 0; right: 0;
+                width: 280px; height: 100vh;
+                box-sizing: border-box;
+                z-index: 995;
+                border-radius: 0; border: none;
+                border-left: 1px solid #333;
+                transform: translateX(100%);
+                overflow-y: auto;
+            }
+            .sidebar.active { transform: translateX(0); }
+            .sidebar-overlay.active { display: block; }
+            .close-sidebar { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🇧🇷 BOLETIM WAR ERA</div>
+        <p class="subtitle">Edição #4 atualizada em 03 de Agosto de 2026 • Informando o Brasil ontem, hoje e amanhã</p>
+        <!-- Barra de Navegação Automatizada -->
+        <div class="edition-nav" id="editionNav" style="margin-top: 1.2rem; font-size: 1rem; display: flex; justify-content: center; gap: 2rem; opacity: 0.9;">
+            <!-- O JS vai injetar os links aqui dinamicamente -->
+        </div>
+    </header>
+
+    <button class="drawer-toggle" id="openDrawer" title="Resumo da Semana">📌</button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="container">
+        <div class="main">
+            <!-- Guerras -->
+            <div class="section guerras">
+                <h2>⚔️ Guerras</h2>
+                
+                <div class="card">
+                    <p>02/08 - <a href="https://app.warera.io/article/6a6fce898fe5b64f93fcab2f" target="_blank" rel="noopener">Manual Tático de Warmode ELITE - Parte 1 - Preparação</a></p>
+                </div>                
+                <!--
+                <div class="card">
+                    <h3>Américas</h3>
+                </div>
+                
+                <div class="card">
+                    <h3>Europa</h3>
+                    <p>25/07 - [br] X [lv]</p>
+                </div> 
+                -->
+                <div class="card">
+                    <h3>África</h3>
+                    <p>30/07 - [br] X [mr]</p> 
+                </div>
+                
+            </div>
+
+            <!-- Política -->
+            <div class="section politica">
+                <h2>⚖️ Política</h2> 
+
+                <div class="card">
+                    <p>02/08 - <a href="https://app.warera.io/user/69d3d6f9c957f807175d543b" target="_blank" rel="noopener">[br] elege o MST-RafaelKstro como presidente!</a></p>
+                </div>
+
+                <div class="card">
+                    <p>31/07 - <a href="https://app.warera.io/article/6a6d28ed50a438bf82e9d87e" target="_blank" rel="noopener">Fichário do Ódio e Fracasso – Edição #2: A Geopolítica do CAPS LOCK (E o Efeito Borboleta)</a></p>
+                </div>
+                <div class="card">
+                    <p>31/07 - <a href="https://app.warera.io/article/6a6ce5febee4b521d0c3ad68" target="_blank" rel="noopener">Modus Operandi Petequinha</a></p>
+                </div>                
+                <div class="card">
+                    <p>31/07 - <a href="https://app.warera.io/article/6a6c880dfc06d17d189456a5" target="_blank" rel="noopener">CANDIDATURA A PRESIDÊNCIA (por um Brasil melhor) [CDR]</a></p>
+                </div>                
+                <div class="card">
+                    <p>31/07 - <a href="https://app.warera.io/article/6a6ca4e476536fe6dd4701a5" target="_blank" rel="noopener">O Desinteresse do PRONA - JBN</a></p>
+                </div> 
+                <div class="card">
+                    <p>30/07 - <a href="https://app.warera.io/article/6a6c0437c35eb65da791fcfb" target="_blank" rel="noopener">FUdA Statement in Response to and Clarification Regarding Timor's Ultimatum to Brazil</a></p>
+                </div>                  
+                <div class="card">
+                    <p>30/07 - <a href="https://app.warera.io/article/6a6be1d58ad5233bdf42d73d" target="_blank" rel="noopener">[ES/PT] ULTIMATO AO GOVERNO DO BRASIL</a></p>
+                </div>                 
+                <div class="card">
+                    <p>26/07 - <a href="https://app.warera.io/article/6a68aeaeed838094b816f59d" target="_blank" rel="noopener">CANDIDATURA  A  PRESIDENCIA [PRB]</a></p>
+                </div>
+
+            </div>
+
+            <!-- Economia 
+            <div class="section economia">
+                <h2>💰 Economia</h2>
+                
+            </div>
+            -->
+            
+            <!-- Memes -->
+            <div class="section memes">
+                <h2>😂 Memes & Comunidade</h2>
+                
+                <div class="card">
+                    <p>01/08 - <a href="https://app.warera.io/article/6a6e83b1836d8f86ecfdf82c" target="_blank" rel="noopener">Recebi uma mensagem curiosa - JBN/BrMemes</a></p>
+                </div> 
+
+                <div class="card">
+                    <p>30/07 - <a href="https://app.warera.io/article/6a6b744c542725b875d8382b" target="_blank" rel="noopener">📜 O Primeiro Evangelho do Chanismo 📜</a></p>
+                </div> 
+
+                <div class="card">
+                    <p>29/07 - <a href="https://app.warera.io/article/6a6a1f345f6afb0b32855962" target="_blank" rel="noopener">A verdade sobre as mentiras do Dom João</a></p>
+                </div> 
+
+                <div class="card">
+                    <p>28/07 - <a href="https://app.warera.io/article/6a6805cb66fc64f9e87be033" target="_blank" rel="noopener">Queria pedir desculpas!</a></p>
+                </div>                
+                 
+            </div>
+        </div>
+
+        <!-- Sidebar (LIVRE DE CORES E EMOJIS MANUAIS!) -->
+        <div class="sidebar" id="sidebarDrawer">
+            <div class="sidebar-header">
+                <h2 style="color: var(--yellow); margin-top:0;">📌 Resumo da Semana</h2>
+                <button class="close-sidebar" id="closeDrawer" title="Fechar">✕</button>
+            </div>
+            <!-- Define a faixa de dias que você quer exibir nesta edição -->
+            <h3 id="sidebarRange" style="color: var(--white); margin-top:0; text-align: center;">27/07 a 02/08</h3> 
+            <div id="sidebarContent" style="max-height: 70vh; overflow-y: auto;">
+            <!-- Os cards serão injetados automaticamente aqui! -->
+        </div>
+    </div> 
+          
+    
+
+    <footer>BR Boletim War Era • Comunidade Brasileira • GiuGiu • 2026</footer>
+
+    <!-- 1. Dados locais de backup (Redundância) caso o script externo não carregue -->
+    <script>
+        // Backup rápido dos países principais deste boletim específico
+        var countries = {
+            br: { name: "Brasil", color: "#009c3b", url: "https://app.warera.io/country/6813b6d546e731854c7ac82f" }
+        };
+        var icons = {
+            money: { emoji: "💰", color: "var(--yellow)" }
+        };
+    </script>
+
+    <!-- 2. Importa o banco de dados global (que vai sobrescrever e expandir o backup acima) -->
+    <script src="script-war-era.js"></script>
+
+    <!-- 3. Motor de renderização da página (este pode rodar local ou você pode mover para o externo no futuro) -->
+    <script>
+        // FUNÇÕES DE CONTINGÊNCIA (Conversão ISO -> Emoji)
+        function getFlagEmoji(countryCode) {
+            const codePoints = countryCode
+                .toUpperCase()
+                .split('')
+                .map(char => 127397 + char.charCodeAt(0));
+            return String.fromCodePoint(...codePoints);
+        }
+
+        function handleFlagError(imgElement, countryCode) {
+            const emoji = getFlagEmoji(countryCode);
+            
+            // Cria um contêiner de texto leve com o emoji para substituir a imagem quebrada
+            const emojiSpan = document.createElement('span');
+            emojiSpan.style.fontSize = '1.3rem';
+            emojiSpan.style.marginRight = '6px';
+            emojiSpan.style.display = 'inline-block';
+            emojiSpan.style.verticalAlign = 'middle';
+            emojiSpan.innerText = emoji;
+            
+            if (imgElement.parentNode) {
+                imgElement.parentNode.replaceChild(emojiSpan, imgElement);
+            }
+        }
+
+        function processContent() {
+            // Garante que temos as variáveis mesmo se o script-war-era.js falhar 100%
+            const activeCountries = window.countries || countries;
+            const activeIcons = window.icons || icons;
+
+            // Cores das seções principais
+            const sectionCards = document.querySelectorAll('.main .section');
+            sectionCards.forEach(section => {
+                const sectionColor = window.getComputedStyle(section).color;
+                const cards = section.querySelectorAll('.card');
+                cards.forEach(card => {
+                    card.style.borderLeftColor = sectionColor;
+                });
+            });
+
+            const cards = document.querySelectorAll('.card, p, h3');
+            cards.forEach(card => {
+                let html = card.innerHTML;
+                
+                // Processamento dos Países
+                html = html.replace(/\[([a-z]{2})\]/g, (match, code) => {
+                    const country = activeCountries[code];
+                    if (!country) return match;
+                    
+                    // 1. Aponta direto pro servidor novo
+                    const flagUrl = `https://media.warera.io/images/flags/${code}.svg`;
+
+                    // 2. Se o novo falhar, o onerror tenta o antigo (app). Se o antigo falhar, chama o handleFlagError
+                    // Estrutura HTML que chama a contingência caso o link do .svg dê erro (como 404 ou queda de servidor)
+                    const innerStructure = `<img src="${flagUrl}" alt="${country.name}" loading="lazy" onerror="if(!this.dataset.retried){this.dataset.retried=true;this.src='https://app.warera.io/images/flags/${code}.svg';}else{handleFlagError(this, '${code}');}"><span class="name" style="color: ${country.color};">${country.name}</span>`;
+                    
+                    const index = card.innerHTML.indexOf(match);
+                    const beforeText = card.innerHTML.substring(0, index);
+                    const insideLink = beforeText.lastIndexOf('<a') > beforeText.lastIndexOf('</a>');
+
+                    if (insideLink) {
+                        return `<span class="country-display">${innerStructure}</span>`;
+                    } else {
+                        return `<a href="${country.url}" target="_blank" rel="noopener" class="country-display" style="text-decoration:none;">${innerStructure}</a>`;
+                    }
+                });
+
+                // Processamento dos Ícones
+                html = html.replace(/\[([a-z]+)\]/g, (match, key) => {
+                    const iconConfig = activeIcons[key];
+                    if (iconConfig) {
+                        if (card.closest('.sidebar')) {
+                            card.style.borderLeftColor = iconConfig.color;
+                        }
+                        return `${iconConfig.emoji} `;
+                    }
+                    return match;
+                });
+
+                card.innerHTML = html;
+            });
+        }
+
+        function setupNavigation() {
+            const navContainer = document.getElementById('editionNav');
+            if (!navContainer) return;
+
+            const path = window.location.pathname;
+            const match = path.match(/br-boletim-(\d+)/);
+            const currentEdition = match ? parseInt(match[1]) : 1;
+            
+            const prevEdition = currentEdition - 1;
+            const nextEdition = currentEdition + 1;
+            
+            const prevUrl = `br-boletim-${prevEdition}.html`;
+            const nextUrl = `br-boletim-${nextEdition}.html`;
+
+            let prevHTML = `<span style="color: #666; cursor: not-allowed; user-select: none;">« Anterior</span>`;
+            if (prevEdition > 0) {
+                prevHTML = `<a href="${prevUrl}" style="color: var(--yellow); font-weight: 700; text-decoration: none;">« Edição #${prevEdition}</a>`;
+            }
+
+            let nextHTML = `<span id="nextEditionLink" style="color: #666; cursor: not-allowed; user-select: none;">Próxima »</span>`;
+            navContainer.innerHTML = `${prevHTML} <span style="color: var(--yellow);">•</span> ${nextHTML}`;
+
+            fetch(nextUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        const nextPlaceholder = document.getElementById('nextEditionLink');
+                        if (nextPlaceholder) {
+                            const activeLink = document.createElement('a');
+                            activeLink.href = nextUrl;
+                            activeLink.style.color = "var(--yellow)";
+                            activeLink.style.fontWeight = "700";
+                            activeLink.style.textDecoration = "none";
+                            activeLink.innerText = `Edição #${nextEdition} »`;
+                            nextPlaceholder.parentNode.replaceChild(activeLink, nextPlaceholder);
+                        }
+                    }
+                })
+                .catch(err => console.log("Próxima edição ainda não publicada."));
+        }
+
+        // Drawer
+        const openBtn = document.getElementById('openDrawer');
+        const closeBtn = document.getElementById('closeDrawer');
+        const sidebar = document.getElementById('sidebarDrawer');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function toggleDrawer() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        if(openBtn) openBtn.addEventListener('click', toggleDrawer);
+        if(closeBtn) closeBtn.addEventListener('click', toggleDrawer);
+        if(overlay) overlay.addEventListener('click', toggleDrawer);
+
+        window.addEventListener('DOMContentLoaded', () => {
+            processContent();
+            setupNavigation();
+        });
+        </script>
+        <!-- Scripts da aplicação -->
+
+        <script src="script-sidebar-war-era.js"></script>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                // Você só muda estas duas datas em cada edição do boletim!
+                renderSidebar("2026-07-27", "2026-08-02");
+
+                // Roda o processamento de ícones, países e navegação que você já tem
+                processContent();
+                setupNavigation();
+            });
+        </script>
+    </script>
+</body>
+</html>
