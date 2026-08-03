@@ -2,7 +2,7 @@
 const weeklyEvents = [
 
     { date: "2026-08-02", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com: [at], [rs], [ua], [mx], [pe], [ru], [es], [bs]" },
-    { date: "2026-08-02", type: "Diplomacia", tag: "[nomoney]", text: "[br] faliu!" },
+    { date: "2026-08-02", type: "Economia", tag: "[nomoney]", text: "[br] faliu!" },
     { date: "2026-07-31", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para ao [br] da [bs]" },
     { date: "2026-07-30", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [bs]" },
     { date: "2026-07-30", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [ru]' },
