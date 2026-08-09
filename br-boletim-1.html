@@ -379,10 +379,12 @@
                     const country = activeCountries[code];
                     if (!country) return match;
                     
-                    const flagUrl = `https://app.warera.io/images/flags/${code}.svg`;
+                    // 1. Aponta direto pro servidor novo
+                    const flagUrl = `https://media.warera.io/images/flags/${code}.svg`;
 
+                    // 2. Se o novo falhar, o onerror tenta o antigo (app). Se o antigo falhar, chama o handleFlagError
                     // Estrutura HTML que chama a contingência caso o link do .svg dê erro (como 404 ou queda de servidor)
-                    const innerStructure = `<img src="${flagUrl}" alt="${country.name}" loading="lazy" onerror="handleFlagError(this, '${code}')"><span class="name" style="color: ${country.color};">${country.name}</span>`;
+                    const innerStructure = `<img src="${flagUrl}" alt="${country.name}" loading="lazy" onerror="if(!this.dataset.retried){this.dataset.retried=true;this.src='https://app.warera.io/images/flags/${code}.svg';}else{handleFlagError(this, '${code}');}"><span class="name" style="color: ${country.color};">${country.name}</span>`;
                     
                     const index = card.innerHTML.indexOf(match);
                     const beforeText = card.innerHTML.substring(0, index);
