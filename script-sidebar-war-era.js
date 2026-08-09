@@ -1,6 +1,26 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    { date: "2026-08-08", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para ao [br] da [ve]" },
+    
+    { date: "2026-08-07", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [kz]' },
+    { date: "2026-08-07", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [gt]" },
+    
+    { date: "2026-08-06", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [ni]" },
+    { date: "2026-08-06", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [ec]" },
+    { date: "2026-08-06", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [hn]" },
+    { date: "2026-08-06", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [tm]' },
+    { date: "2026-08-06", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [uz]" },
+    
+    { date: "2026-08-05", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [ve]" },
+    { date: "2026-08-05", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [ua]" },
+    
+    { date: "2026-08-04", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [rs]" },
+    
+    { date: "2026-08-03", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [at]" },
+    { date: "2026-08-03", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [ru]" },
+    { date: "2026-08-03", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [ro]" },
+    
     { date: "2026-08-02", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com: [at], [rs], [ua], [mx], [pe], [ru], [es], [bs]" },
     { date: "2026-08-02", type: "Economia", tag: "[nomoney]", text: "[br] faliu!" },
     { date: "2026-07-31", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para ao [br] da [bs]" },
