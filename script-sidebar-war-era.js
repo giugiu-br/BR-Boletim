@@ -4,7 +4,7 @@ const weeklyEvents = [
     { date: "2026-08-09", type: "Diplomacia", tag: "[peace]", text: "[br] libertou [sr]" },
     { date: "2026-08-09", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [uz]' },
     
-    { date: "2026-08-08", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para ao [br] da [ve]" },
+    { date: "2026-08-08", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para a [ve] do [br]" },
     
     { date: "2026-08-07", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [kz]' },
     { date: "2026-08-07", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [gt]" },
