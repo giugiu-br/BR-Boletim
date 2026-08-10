@@ -51,7 +51,7 @@ const countriesDatabase = {
     lc: { name: "Santa Lúcia", color: "#66CCFF", url: "" },
     kn: { name: "São Cristóvão e Névis", color: "#009E49", url: "" },
     vc: { name: "São Vicente e Granadinas", color: "#009E49", url: "" },
-    sr: { name: "Suriname", color: "#377E3F", url: "" },
+    sr: { name: "Suriname", color: "#377E3F", url: "https://app.warera.io/country/6813b6d546e731854c7ac8a0" },
     tt: { name: "Trinidad e Tobago", color: "#DA291C", url: "" },
     uy: { name: "Uruguai", color: "#0081C8", url: "" },
     ve: { name: "Venezuela", color: "#FCD116", url: "https://app.warera.io/country/6813b6d546e731854c7ac858" },
