@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Boletim War Era • 17/08/2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #151a1e;
+            --green: #009c3b;
+            --yellow: #ffdf00;
+            --blue: #002776;
+            --text: #e5e5e5;
+            --card: #141414;
+            --black: #000000;
+            --red: #880808;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Saira', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #002f1e, #1a1a1a);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 6px solid var(--green);
+        }
+        
+        .logo { font-size: 2.8rem; font-weight: 700; color: #ffffff; }
+        .subtitle { font-size: 1.15rem; color: var(--yellow); margin-top: 0.5rem; }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 2.5rem;
+        }
+        
+        .section { margin-bottom: 2.8rem; }
+        .section h2 { padding-bottom: 0.5rem; margin-bottom: 1.2rem; border-bottom: 3px solid; }
+        
+        /* Definição de cores das seções principais */
+        .guerras { color: var(--green); }
+        .guerras h2 { border-color: var(--green); }
+
+        .politica { color: var(--white); }
+        .politica h2 { border-color: var(--white); }
+
+        .economia { color: var(--yellow); }
+        .economia h2 { border-color: var(--yellow); }
+
+        .memes { color: var(--blue); }
+        .memes h2 { border-color: var(--blue); }
+        
+        /* O card herda a cor da seção (main) ou do próprio elemento (sidebar) */
+        .card {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 1.6rem;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid currentColor;
+            color: var(--text);
+        }
+        
+        .sidebar { 
+            background: var(--card); 
+            padding: 1.8rem; 
+            border-radius: 8px; 
+            height: fit-content; 
+            border: 1px solid #333;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .close-sidebar {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .drawer-toggle {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 2px solid var(--yellow);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.7);
+            z-index: 990;
+        }
+
+        /* Container de Pódio retrátil (Spoiler) */
+        .medals-spoiler {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            border-radius: 6px;
+            margin-top: 0.8rem;
+            overflow: hidden;
+        }
+
+        /* Botão que abre/fecha o spoiler */
+        .medals-summary {
+            padding: 0.6rem 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--yellow);
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.2s ease;
+        }
+
+        .medals-summary:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Esconde a setinha padrão chata dos navegadores */
+        .medals-spoiler summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Conteúdo dentro do Spoiler */
+        .medals-spoiler .medal-list {
+            padding: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .medal-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+        }
+
+        /* Cores do Pódio */
+        .medal-item.gold { border-left: 4px solid #ffd700; background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent); }
+        .medal-item.silver { border-left: 4px solid #c0c0c0; background: linear-gradient(90deg, rgba(192, 192, 192, 0.1), transparent); }
+        .medal-item.bronze { border-left: 4px solid #cd7f32; background: linear-gradient(90deg, rgba(205, 127, 50, 0.1), transparent); }
+
+        .player-link {
+            color: var(--white);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .player-link:hover {
+            color: var(--yellow);
+            text-decoration: underline;
+        }
+                
+        footer { text-align: center; padding: 2.5rem 1rem; opacity: 0.75; font-size: 0.95rem; border-top: 1px solid #222; }
+        a { color: var(--yellow); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .country-display { display: inline-flex; align-items: center; gap: 6px; vertical-align: middle; color: inherit; }
+        .country-display img { width: auto; height: 19px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+        .country-display .name { font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            .drawer-toggle { display: flex; }
+            .sidebar {
+                position: fixed;
+                top: 0; right: 0;
+                width: 280px; height: 100vh;
+                box-sizing: border-box;
+                z-index: 995;
+                border-radius: 0; border: none;
+                border-left: 1px solid #333;
+                transform: translateX(100%);
+                overflow-y: auto;
+            }
+            .sidebar.active { transform: translateX(0); }
+            .sidebar-overlay.active { display: block; }
+            .close-sidebar { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🇧🇷 BOLETIM WAR ERA</div>
+        <p class="subtitle">Edição #6 atualizada em 17 de Agosto de 2026 • Informando o Brasil ontem, hoje e amanhã</p>
+        <!-- Barra de Navegação Automatizada -->
+        <div class="edition-nav" id="editionNav" style="margin-top: 1.2rem; font-size: 1rem; display: flex; justify-content: center; gap: 2rem; opacity: 0.9;">
+            <!-- O JS vai injetar os links aqui dinamicamente -->
+        </div>
+    </header>
+
+    <button class="drawer-toggle" id="openDrawer" title="Resumo da Semana">📌</button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="container">
+        <div class="main">
+            <!-- Guerras -->
+            <div class="section guerras">
+                <h2>⚔️ Guerras</h2>
+
+                <div class="card">
+                    <p>15/08 - <a href="https://app.warera.io/article/6a14dc347fe7610df5008777" target="_blank" rel="noopener">Alistamento Militar</a></p>
+                </div>                 
+
+                <div class="card">
+                    <p>15/08 - <a href="https://app.warera.io/article/6a7fdd1c32ee34fc15bfe0b9" target="_blank" rel="noopener">RELATO DO FRONT - UMA MENSAGEM AO BRASIL! [EN/PT]</a></p>
+                </div>                
+
+                <div class="card">
+                    <p>11/08 - <a href="https://app.warera.io/article/6a7bcb54712084a7095b4e9b" target="_blank" rel="noopener">A guerra chegou, nos vemos no fronte!</a></p>
+                </div>
+
+                <div class="card">
+                    <p>11/08 - <a href="https://app.warera.io/article/6a7543b0e94c2ccc2492cdc6" target="_blank" rel="noopener">O BRASIL PRECISA DE VOCÊ NO WARMODE! - MCom</a></p>
+                </div>          
+                
+                <div class="card">
+                    <h3>Américas</h3>
+
+
+                    <p>16/08 - <a href="https://app.warera.io/article/6a8148a675f7e0a8490fbc26" target="_blank" rel="noopener">TRÊS FRONTS. UM SÓ BRASIL.</a></p>
+
+                    <!-- Spoiler com as Medalhas -->
+                    <details class="medals-spoiler">
+                        <summary class="medals-summary">
+                            <span>🎖️ Ver Medalhistas da Batalha de Brasília</span>
+                            <span style="font-size: 0.75rem; opacity: 0.7;">▼</span>
+                        </summary>
+                        
+                        <div class="medal-list">
+                            <div class="medal-item gold">
+                                <span class="medal-icon">🥇</span>
+                                <a href="https://app.warera.io/user/69ceed390a0c84f7c0f61a04" target="_blank" rel="noopener" class="player-link">H_Zewil - 73.37K</a>
+                            </div>
+                            <div class="medal-item silver">
+                                <span class="medal-icon">🥈</span>
+                                <a href="https://app.warera.io/user/6a19d3d2c6f939330f1e2d92" target="_blank" rel="noopener" class="player-link">Luchemix - 68.73K</a>
+                            </div>
+                            <div class="medal-item bronze">
+                                <span class="medal-icon">🥉</span>
+                                <a href="https://app.warera.io/user/69e76375cc7986c95ad9e68a" target="_blank" rel="noopener" class="player-link">Vazio - 34.36K</a>
+                            </div>
+                        </div>
+                    </details> 
+
+                    <!-- Spoiler com as Medalhas -->
+                    <details class="medals-spoiler">
+                        <summary class="medals-summary">
+                            <span>🎖️ Ver Medalhistas da Batalha de Recife</span>
+                            <span style="font-size: 0.75rem; opacity: 0.7;">▼</span>
+                        </summary>
+                        
+                        <div class="medal-list">
+                            <div class="medal-item gold">
+                                <span class="medal-icon">🥇</span>
+                                <a href="https://app.warera.io/user/690d8a3e6fdd2d7701435d35" target="_blank" rel="noopener" class="player-link">Morodin - 2.91M</a>
+                            </div>
+                            <div class="medal-item silver">
+                                <span class="medal-icon">🥈</span>
+                                <a href="https://app.warera.io/user/6973bc8d1954fe9142d9e7fe" target="_blank" rel="noopener" class="player-link">Andyfoe - 1.89M</a>
+                            </div>
+                            <div class="medal-item bronze">
+                                <span class="medal-icon">🥉</span>
+                                <a href="https://app.warera.io/user/6813d04ad1ec2b466b93da08" target="_blank" rel="noopener" class="player-link">Maybe_Next_Time - 1.82M</a>
+                            </div>
+                        </div>
+                    </details>                      
+
+                    <!-- Spoiler com as Medalhas -->
+                    <details class="medals-spoiler">
+                        <summary class="medals-summary">
+                            <span>🎖️ Ver Medalhistas da Batalha de São Paulo</span>
+                            <span style="font-size: 0.75rem; opacity: 0.7;">▼</span>
+                        </summary>
+                        
+                        <div class="medal-list">
+                            <div class="medal-item gold">
+                                <span class="medal-icon">🥇</span>
+                                <a href="https://app.warera.io/user/689f9d8598f8c7f7c5753d80" target="_blank" rel="noopener" class="player-link">EMERSON - 8.78M</a>
+                            </div>
+                            <div class="medal-item silver">
+                                <span class="medal-icon">🥈</span>
+                                <a href="https://app.warera.io/user/6848ce261305ec113480900c" target="_blank" rel="noopener" class="player-link">TarugaDVZ - 4.65M</a>
+                            </div>
+                            <div class="medal-item bronze">
+                                <span class="medal-icon">🥉</span>
+                                <a href="https://app.warera.io/user/6955191be5e443ec92e2f1a0" target="_blank" rel="noopener" class="player-link">ferbxxx - 4.24M</a>
+                            </div>
+                        </div>
+                    </details>                   
+
+                    <p>15/08 - [br] X [fr]</p>
+                    <p><a href="https://app.warera.io/article/6a7fc79f072639fe7a0e5e73" target="_blank" rel="noopener">BELÉM: UMA BATALHA PARA A HISTÓRIA</a></p>
+
+                    <!-- Spoiler com as Medalhas -->
+                    <details class="medals-spoiler">
+                        <summary class="medals-summary">
+                            <span>🎖️ Ver Medalhistas da Batalha</span>
+                            <span style="font-size: 0.75rem; opacity: 0.7;">▼</span>
+                        </summary>
+                        
+                        <div class="medal-list">
+                            <div class="medal-item gold">
+                                <span class="medal-icon">🥇</span>
+                                <a href="https://app.warera.io/user/6848ce261305ec113480900c" target="_blank" rel="noopener" class="player-link">TarugaDVZ - 15.2M</a>
+                            </div>
+                            <div class="medal-item silver">
+                                <span class="medal-icon">🥈</span>
+                                <a href="https://app.warera.io/user/68e274c85c4b8aa182eb059b" target="_blank" rel="noopener" class="player-link">NMikulski - 10.92M</a>
+                            </div>
+                            <div class="medal-item bronze">
+                                <span class="medal-icon">🥉</span>
+                                <a href="https://app.warera.io/user/689f9d8598f8c7f7c5753d80" target="_blank" rel="noopener" class="player-link">EMERSON - 10.31M</a>
+                            </div>
+                        </div>
+                    </details>                       
+
+                    <p>14/08 - [br] X [ar]</p>
+                    <p><a href="https://app.warera.io/article/6a7e796eb04953350ab23868" target="_blank" rel="noopener">SÃO PAULO RESISTIU!</a></p>
+
+                    <!-- Spoiler com as Medalhas -->
+                    <details class="medals-spoiler">
+                        <summary class="medals-summary">
+                            <span>🎖️ Ver Medalhistas da Batalha</span>
+                            <span style="font-size: 0.75rem; opacity: 0.7;">▼</span>
+                        </summary>
+                        
+                        <div class="medal-list">
+                            <div class="medal-item gold">
+                                <span class="medal-icon">🥇</span>
+                                <a href="https://app.warera.io/user/6848ce261305ec113480900c" target="_blank" rel="noopener" class="player-link">EMERSON - 11.78M</a>
+                            </div>
+                            <div class="medal-item silver">
+                                <span class="medal-icon">🥈</span>
+                                <a href="https://app.warera.io/user/68e274c85c4b8aa182eb059b" target="_blank" rel="noopener" class="player-link">kaioo21 - 6.85M</a>
+                            </div>
+                            <div class="medal-item bronze">
+                                <span class="medal-icon">🥉</span>
+                                <a href="https://app.warera.io/user/689f9d8598f8c7f7c5753d80" target="_blank" rel="noopener" class="player-link">perucci - 5.42M</a>
+                            </div>
+                        </div>
+                    </details>   
+
+
+                </div>
+                
+                <div class="card">
+                    <h3>Europa</h3>
+                    <p>11/08 - <a href="https://app.warera.io/article/6a7b3b13e54c24572df4856d" target="_blank" rel="noopener">⚔️ Guerra em BANAT & CRIȘANA</a></p>   
+                </div> 
+                
+                <div class="card">
+                    <h3>África</h3>
+
+                    
+
+                    <p>13/08 - [br] X [lr]</p>
+                    <p><a href="https://app.warera.io/battle/6a7e0183e99df7edae7f81e2" target="_blank" rel="noopener">Kankan</a></p>
+
+                    <!-- Spoiler com as Medalhas -->
+                    <details class="medals-spoiler">
+                        <summary class="medals-summary">
+                            <span>🎖️ Ver Medalhistas da Batalha</span>
+                            <span style="font-size: 0.75rem; opacity: 0.7;">▼</span>
+                        </summary>
+                        
+                        <div class="medal-list">
+                            <div class="medal-item gold">
+                                <span class="medal-icon">🥇</span>
+                                <a href="https://app.warera.io/user/69d0846078e94f288ee07fee" target="_blank" rel="noopener" class="player-link">blacklove - 738K</a>
+                            </div>
+                            <div class="medal-item silver">
+                                <span class="medal-icon">🥈</span>
+                                <a href="https://app.warera.io/user/69b9cf742174549910225d1e" target="_blank" rel="noopener" class="player-link">Pancho_Villa - 413K</a>
+                            </div>
+                            <div class="medal-item bronze">
+                                <span class="medal-icon">🥉</span>
+                                <a href="https://app.warera.io/user/6a064ba2a072838902047d27" target="_blank" rel="noopener" class="player-link">GiuGiu - 244K</a>
+                            </div>
+                        </div>
+                    </details>                    
+
+                    <p>12/08 - [br] X [lr]</p>
+                    <p><a href="https://app.warera.io/article/6a7d4a2d69124c83cc6f8905" target="_blank" rel="noopener">A BATALHA DE WESTERN LIBERIA</a></p>
+    
+                    <!-- Spoiler com as Medalhas -->
+                    <details class="medals-spoiler">
+                        <summary class="medals-summary">
+                            <span>🎖️ Ver Medalhistas da Batalha</span>
+                            <span style="font-size: 0.75rem; opacity: 0.7;">▼</span>
+                        </summary>
+                        
+                        <div class="medal-list">
+                            <div class="medal-item gold">
+                                <span class="medal-icon">🥇</span>
+                                <a href="https://app.warera.io/user/6849768486b2452dae51db90" target="_blank" rel="noopener" class="player-link">TarugaDVZ - 8.25M</a>
+                            </div>
+                            <div class="medal-item silver">
+                                <span class="medal-icon">🥈</span>
+                                <a href="https://app.warera.io/user/681f349fedc35f3cf442e1bc" target="_blank" rel="noopener" class="player-link">Niihlost - 6.38M</a>
+                            </div>
+                            <div class="medal-item bronze">
+                                <span class="medal-icon">🥉</span>
+                                <a href="https://app.warera.io/user/6813d04ad1ec2b466b93da08" target="_blank" rel="noopener" class="player-link">Maybe_Next_Time - 5.64M</a>
+                            </div>
+                        </div>
+                    </details>
+
+
+                    <p>11/08 - [br] X [lr]</p>
+                    <p><a href="https://app.warera.io/battle/6a7b5bae4280ad12011d34c7" target="_blank" rel="noopener">Southeastern Liberia</a></p>
+    
+                    <!-- Spoiler com as Medalhas -->
+                    <details class="medals-spoiler">
+                        <summary class="medals-summary">
+                            <span>🎖️ Ver Medalhistas da Batalha</span>
+                            <span style="font-size: 0.75rem; opacity: 0.7;">▼</span>
+                        </summary>
+                        
+                        <div class="medal-list">
+                            <div class="medal-item gold">
+                                <span class="medal-icon">🥇</span>
+                                <a href="https://app.warera.io/user/696361d05a395c072623949d" target="_blank" rel="noopener" class="player-link">Perol - 3.23M</a>
+                            </div>
+                            <div class="medal-item silver">
+                                <span class="medal-icon">🥈</span>
+                                <a href="https://app.warera.io/user/6830b7bdec8d7fb5ea1444a0" target="_blank" rel="noopener" class="player-link">ZetogaTKM - 3.01M</a>
+                            </div>
+                            <div class="medal-item bronze">
+                                <span class="medal-icon">🥉</span>
+                                <a href="https://app.warera.io/user/6849768486b2452dae51db90" target="_blank" rel="noopener" class="player-link">TarugaDVZ - 2.82M</a>
+                            </div>
+                        </div>
+                    </details>
+
+                </div>
+                
+            </div>
+
+            <!-- Política -->
+            <div class="section politica">
+                <h2>⚖️ Política</h2> 
+
+                <div class="card">
+                    <p>10/08 - <a href="https://app.warera.io/article/6a7a85e87170589efc717627" target="_blank" rel="noopener">NOVO MINISTRO DE COMUNICAÇÃO</a></p>
+                </div>                  
+
+            </div>
+
+            <!-- Economia 
+            <div class="section economia">
+                <h2>💰 Economia</h2>
+
+            </div>
+            -->
+            
+            <!-- Memes -->
+            <div class="section memes">
+                <h2>😂 Memes & Comunidade</h2>
+
+                <div class="card">
+                    <p>16/08 - <a href="https://app.warera.io/article/6a81d776046294a20a3ad4e3" target="_blank" rel="noopener">"Como abrir resistência/revolta no território invadido"</a></p>
+                </div>                
+
+                <div class="card">
+                    <p>15/08 - <a href="https://app.warera.io/article/6a810dda8ba0843a56908294" target="_blank" rel="noopener">"HINO DA BATALHA DE BELEM"</a></p>
+                </div>
+
+                <div class="card">
+                    <p>15/08 - <a href="https://app.warera.io/article/6a7fd8fe19bed89d67f1ec4e" target="_blank" rel="noopener">"Nossa eu to tremendo de Medo." - BrMemes</a></p>
+                </div>
+
+                <div class="card">
+                    <p>14/08 - <a href="https://app.warera.io/article/6a7e5b565ba5c93368bf37dd" target="_blank" rel="noopener">Brasil x Argentina</a></p>
+                </div>
+
+                <div class="card">
+                    <p>12/08 - <a href="https://app.warera.io/article/6a7c76e1046294a20a8d6cf5" target="_blank" rel="noopener">Sobre a Preocupação  Brasileira? - BrMemes</a></p>
+                </div>
+
+                <div class="card">
+                    <p>11/08 - <a href="https://app.warera.io/article/6a7b96ed0b59bd6930002c6b" target="_blank" rel="noopener">Reunidos pelo Brasil! - JBN/Br Memes</a></p>
+                </div>
+                <!--
+                <div class="card">
+                    <p>10/08 - <a href="https://app.warera.io/article/6a7a7964f19996f8b4af2929" target="_blank" rel="noopener">Resposta ao Marx_Jorge_Jr</a></p>
+                </div> 
+
+                <div class="card">
+                    <p>10/08 - <a href="https://app.warera.io/article/6a7a5b827860bfb56b555cff" target="_blank" rel="noopener">Manual de Sobrevivência do Novato - O Teatro de Sombras e Egos da Política Brasileira</a></p>
+                </div>                
+                -->
+                <div class="card">
+                    <p>10/08 - <a href="https://app.warera.io/article/6a79c547006a168bfe0472f6" target="_blank" rel="noopener">Resumo - JBN</a></p>
+                </div> 
+
+                <div class="card">
+                    <p>10/08 - <a href="https://app.warera.io/article/6a79bf509fd4d9047f5ff0db" target="_blank" rel="noopener">Está pegando fogo! Ajude o servidor!!!</a></p>
+                </div>                 
+                 
+            </div>
+        </div>
+
+        <!-- Sidebar (LIVRE DE CORES E EMOJIS MANUAIS!) -->
+        <div class="sidebar" id="sidebarDrawer">
+            <div class="sidebar-header">
+                <h2 style="color: var(--yellow); margin-top:0;">📌 Resumo da Semana</h2>
+                <button class="close-sidebar" id="closeDrawer" title="Fechar">✕</button>
+            </div>
+            <!-- Define a faixa de dias que você quer exibir nesta edição -->
+            <h3 id="sidebarRange" style="color: var(--white); margin-top:0; text-align: center;">03/08 a 09/08</h3> 
+            <div id="sidebarContent" style="max-height: 70vh; overflow-y: auto;">
+            <!-- Os cards serão injetados automaticamente aqui! -->
+        </div>
+    </div> 
+          
+    <footer>BR Boletim War Era • Comunidade Brasileira • GiuGiu • 2026</footer>
+
+    <!-- 1. Dados locais de backup (Redundância) caso o script externo não carregue -->
+    <script>
+        // Backup rápido dos países principais deste boletim específico
+        var countries = {
+            br: { name: "Brasil", color: "#009c3b", url: "https://app.warera.io/country/6813b6d546e731854c7ac82f" }
+        };
+        var icons = {
+            money: { emoji: "💰", color: "var(--yellow)" }
+        };
+    </script>
+
+    <!-- 2. Importa o banco de dados global (que vai sobrescrever e expandir o backup acima) -->
+    <script src="script-war-era.js"></script>
+
+    <!-- 3. Motor de renderização da página (este pode rodar local ou você pode mover para o externo no futuro) -->
+    <script>
+        // FUNÇÕES DE CONTINGÊNCIA (Conversão ISO -> Emoji)
+        function getFlagEmoji(countryCode) {
+            const codePoints = countryCode
+                .toUpperCase()
+                .split('')
+                .map(char => 127397 + char.charCodeAt(0));
+            return String.fromCodePoint(...codePoints);
+        }
+
+        function handleFlagError(imgElement, countryCode) {
+            const emoji = getFlagEmoji(countryCode);
+            
+            // Cria um contêiner de texto leve com o emoji para substituir a imagem quebrada
+            const emojiSpan = document.createElement('span');
+            emojiSpan.style.fontSize = '1.3rem';
+            emojiSpan.style.marginRight = '6px';
+            emojiSpan.style.display = 'inline-block';
+            emojiSpan.style.verticalAlign = 'middle';
+            emojiSpan.innerText = emoji;
+            
+            if (imgElement.parentNode) {
+                imgElement.parentNode.replaceChild(emojiSpan, imgElement);
+            }
+        }
+
+        function processContent() {
+            // Garante que temos as variáveis mesmo se o script-war-era.js falhar 100%
+            const activeCountries = window.countries || countries;
+            const activeIcons = window.icons || icons;
+
+            // Cores das seções principais
+            const sectionCards = document.querySelectorAll('.main .section');
+            sectionCards.forEach(section => {
+                const sectionColor = window.getComputedStyle(section).color;
+                const cards = section.querySelectorAll('.card');
+                cards.forEach(card => {
+                    card.style.borderLeftColor = sectionColor;
+                });
+            });
+
+            const cards = document.querySelectorAll('.card, p, h3');
+            cards.forEach(card => {
+                let html = card.innerHTML;
+                
+                // Processamento dos Países
+                html = html.replace(/\[([a-z]{2})\]/g, (match, code) => {
+                    const country = activeCountries[code];
+                    if (!country) return match;
+                    
+                    // 1. Aponta direto pro servidor novo
+                    const flagUrl = `https://media.warera.io/images/flags/${code}.svg`;
+
+                    // 2. Se o novo falhar, o onerror tenta o antigo (app). Se o antigo falhar, chama o handleFlagError
+                    // Estrutura HTML que chama a contingência caso o link do .svg dê erro (como 404 ou queda de servidor)
+                    const innerStructure = `<img src="${flagUrl}" alt="${country.name}" loading="lazy" onerror="if(!this.dataset.retried){this.dataset.retried=true;this.src='https://app.warera.io/images/flags/${code}.svg';}else{handleFlagError(this, '${code}');}"><span class="name" style="color: ${country.color};">${country.name}</span>`;
+                    
+                    const index = card.innerHTML.indexOf(match);
+                    const beforeText = card.innerHTML.substring(0, index);
+                    const insideLink = beforeText.lastIndexOf('<a') > beforeText.lastIndexOf('</a>');
+
+                    if (insideLink) {
+                        return `<span class="country-display">${innerStructure}</span>`;
+                    } else {
+                        return `<a href="${country.url}" target="_blank" rel="noopener" class="country-display" style="text-decoration:none;">${innerStructure}</a>`;
+                    }
+                });
+
+                // Processamento dos Ícones
+                html = html.replace(/\[([a-z]+)\]/g, (match, key) => {
+                    const iconConfig = activeIcons[key];
+                    if (iconConfig) {
+                        if (card.closest('.sidebar')) {
+                            card.style.borderLeftColor = iconConfig.color;
+                        }
+                        return `${iconConfig.emoji} `;
+                    }
+                    return match;
+                });
+
+                card.innerHTML = html;
+            });
+        }
+
+        function setupNavigation() {
+            const navContainer = document.getElementById('editionNav');
+            if (!navContainer) return;
+
+            const path = window.location.pathname;
+            const match = path.match(/br-boletim-(\d+)/);
+            const currentEdition = match ? parseInt(match[1]) : 1;
+            
+            const prevEdition = currentEdition - 1;
+            const nextEdition = currentEdition + 1;
+            
+            const prevUrl = `br-boletim-${prevEdition}.html`;
+            const nextUrl = `br-boletim-${nextEdition}.html`;
+
+            let prevHTML = `<span style="color: #666; cursor: not-allowed; user-select: none;">« Anterior</span>`;
+            if (prevEdition > 0) {
+                prevHTML = `<a href="${prevUrl}" style="color: var(--yellow); font-weight: 700; text-decoration: none;">« Edição #${prevEdition}</a>`;
+            }
+
+            let nextHTML = `<span id="nextEditionLink" style="color: #666; cursor: not-allowed; user-select: none;">Próxima »</span>`;
+            navContainer.innerHTML = `${prevHTML} <span style="color: var(--yellow);">•</span> ${nextHTML}`;
+
+            fetch(nextUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        const nextPlaceholder = document.getElementById('nextEditionLink');
+                        if (nextPlaceholder) {
+                            const activeLink = document.createElement('a');
+                            activeLink.href = nextUrl;
+                            activeLink.style.color = "var(--yellow)";
+                            activeLink.style.fontWeight = "700";
+                            activeLink.style.textDecoration = "none";
+                            activeLink.innerText = `Edição #${nextEdition} »`;
+                            nextPlaceholder.parentNode.replaceChild(activeLink, nextPlaceholder);
+                        }
+                    }
+                })
+                .catch(err => console.log("Próxima edição ainda não publicada."));
+        }
+
+        // Drawer
+        const openBtn = document.getElementById('openDrawer');
+        const closeBtn = document.getElementById('closeDrawer');
+        const sidebar = document.getElementById('sidebarDrawer');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function toggleDrawer() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        if(openBtn) openBtn.addEventListener('click', toggleDrawer);
+        if(closeBtn) closeBtn.addEventListener('click', toggleDrawer);
+        if(overlay) overlay.addEventListener('click', toggleDrawer);
+
+        //window.addEventListener('DOMContentLoaded', () => {
+        //    processContent();
+        //    setupNavigation();
+        //});
+        </script>
+        <!-- Scripts da aplicação -->
+
+        <script src="script-sidebar-war-era.js"></script>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                // Você só muda estas duas datas em cada edição do boletim!
+                renderSidebar("2026-08-09", "2026-08-16"); // <=================================================B
+
+                // Roda o processamento de ícones, países e navegação que você já tem
+                processContent();
+                setupNavigation();
+            });
+        </script>
+    </script>
+</body>
+</html>
