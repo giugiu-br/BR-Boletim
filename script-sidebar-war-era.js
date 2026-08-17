@@ -1,6 +1,19 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] do [mx]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] do [gt]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 1812 para o [br] do [cr]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] do [ni]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para o [br] do [jm]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] do [pe]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] do [sv]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 3000 para o [br] do [ve]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] do [jm]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] do [hn]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [tt]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 750 para o [br] do [sv]" },
+    { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] do [ni]" },
     
     { date: "2026-08-15", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [ht]" },
     { date: "2026-08-15", type: "Diplomacia", tag: "[money]", text: "Envio de 2614 para o [br] do [cr]" },
