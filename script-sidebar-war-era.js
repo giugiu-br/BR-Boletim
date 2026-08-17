@@ -1,6 +1,32 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    
+    { date: "2026-08-15", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [ht]" },
+    { date: "2026-08-15", type: "Diplomacia", tag: "[money]", text: "Envio de 2614 para o [br] do [cr]" },
+    { date: "2026-08-15", type: "Diplomacia", tag: "[money]", text: "Envio de 4000 para o [br] do [ve]" },
+    { date: "2026-08-15", type: "Diplomacia", tag: "[money]", text: "Envio de 500 para o [br] do [ec]" },
+    { date: "2026-08-15", type: "Diplomacia", tag: "[money]", text: "Envio de 1200 para o [br] do [jm]" },
+    { date: "2026-08-15", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] do [ni]" },
+    { date: "2026-08-15", type: "Diplomacia", tag: "[money]", text: "Envio de 750 para o [br] do [sv]" },
+    { date: "2026-08-15", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] do [mx]" },
+    { date: "2026-08-15", type: "Diplomacia", tag: "[money]", text: "Envio de 750 para o [br] do [pe]" },
+    
+    { date: "2026-08-14", type: "Internacional", tag: "[noalliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> expulsa [jm]' },
+    { date: "2026-08-14", type: "Diplomacia", tag: "[money]", text: "Envio de 900 para a [ie] do [br]" },
+    { date: "2026-08-14", type: "Diplomacia", tag: "[war]", text: "[sl] declarou guerra ao [br]" },
+    { date: "2026-08-14", type: "Diplomacia", tag: "[war]", text: "[pe] declarou guerra ao [br]" },
+    { date: "2026-08-14", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com: [pe]" },
+    { date: "2026-08-14", type: "Internacional", tag: "[noalliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> expulsa [pe]' },
+
+    { date: "2026-08-13", type: "Diplomacia", tag: "[war]", text: "[co] declarou guerra ao [br]" },
+    { date: "2026-08-13", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [cr]" },
+    { date: "2026-08-13", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] de [cr]" },
+    { date: "2026-08-13", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [sv]" },
+    { date: "2026-08-13", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [ie]" },
+    { date: "2026-08-13", type: "Diplomacia", tag: "[war]", text: "[sr] declarou guerra ao [br]" },
+    { date: "2026-08-13", type: "Diplomacia", tag: "[war]", text: "[fr] declarou guerra ao [br]" },
+    
     { date: "2026-08-12", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [pe]" },
     { date: "2026-08-12", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [bs]" },
     { date: "2026-08-12", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [mx]" },
