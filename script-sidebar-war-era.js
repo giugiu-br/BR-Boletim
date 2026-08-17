@@ -1,6 +1,26 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    { date: "2026-08-12", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [pe]" },
+    { date: "2026-08-12", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [bs]" },
+    { date: "2026-08-12", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [mx]" },
+    { date: "2026-08-12", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [sv]" },
+    { date: "2026-08-12", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [sv]' },
+    { date: "2026-08-12", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [cr]" },
+    { date: "2026-08-12", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] da [hn]" },
+    { date: "2026-08-12", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] da [ni]" },
+    { date: "2026-08-12", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra a [ar]" },
+    { date: "2026-08-12", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra a [sn]" },
+    
+    { date: "2026-08-11", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra a [gn]" },
+    { date: "2026-08-11", type: "Diplomacia", tag: "[peace]", text: "[br] libertou [gy]" },
+    { date: "2026-08-11", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra a [ci]" },
+    { date: "2026-08-11", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [bz]" },
+    { date: "2026-08-11", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra a [lr]" },
+    { date: "2026-08-11", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [pe]" },
+    
+    { date: "2026-08-10", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [al]" },
+
     { date: "2026-08-09", type: "Diplomacia", tag: "[peace]", text: "[br] libertou [sr]" },
     { date: "2026-08-09", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--blue);">Frente Unido de Autodefensa</a> entra [uz]' },
     
