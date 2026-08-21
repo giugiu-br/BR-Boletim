@@ -1,6 +1,26 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    { date: "2026-08-20", type: "Diplomacia", tag: "[money]", text: "Envio de 100 para o [br] do [ec]" },
+    { date: "2026-08-20", type: "Diplomacia", tag: "[money]", text: "Envio de 1764 para o [br] da [ve]" },
+    { date: "2026-08-20", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para o [br] de [sv]" },
+    { date: "2026-08-20", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [sr]" },
+    { date: "2026-08-20", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para o [br] de [hn]" },
+
+    { date: "2026-08-19", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [ci]" },
+    { date: "2026-08-19", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] (4): [ie], [bs], [sv], [na]" },
+    
+    { date: "2026-08-18", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] (6): [ni], [ve], [hn], [mx], [ua], [bz]" },
+    
+    { date: "2026-08-17", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] (2): [ec] e [cr]" },
+    { date: "2026-08-17", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com (21): [ro], [ru], [at], [rs], [ua], [ve], [uz], [hn], [ec], [ni], [gt], [al], [bz], [cr], [mx], [bs], [ie], [sv], [ht], [tt], [jm]" },
+    { date: "2026-08-17", type: "Economia", tag: "[nomoney]", text: "[br] faliu!" },
+    { date: "2026-08-17", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para o [br] do [sv]" },
+    { date: "2026-08-17", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para o [br] do [ve]" },
+    { date: "2026-08-17", type: "Diplomacia", tag: "[money]", text: "Envio de 750 para o [br] do [ni]" },
+    { date: "2026-08-17", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] do [mx]" },
+    { date: "2026-08-17", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para o [br] de [sv]" },
+    
     { date: "2026-08-16", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [jm]" },
     { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] do [hn]" },
     { date: "2026-08-16", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] do [mx]" },
