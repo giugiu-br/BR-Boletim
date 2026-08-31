@@ -1,6 +1,15 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    { date: "2026-08-26", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com [na]" },
+    { date: "2026-08-26", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra a [ve]" },
+    { date: "2026-08-26", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com [ve]" },
+    
+    { date: "2026-08-25", type: "Internacional", tag: "[noalliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--red);">Frente Unido de Autodefensa</a> fim da aliança' },    
+    
+    { date: "2026-08-24", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [sl]" },
+    { date: "2026-08-24", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br]: [ua]" },
+
     { date: "2026-08-23", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] do [ni]" },
     { date: "2026-08-23", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] da [hn]" },
     { date: "2026-08-23", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [bs]" },
