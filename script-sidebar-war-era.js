@@ -1,11 +1,22 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    { date: "2026-08-30", type: "Diplomacia", tag: "[war]", text: "[ci] declarou guerra ao [br]" },
+    
+    { date: "2026-08-29", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br]: [bf] e [cd]" },
+    { date: "2026-08-29", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a9250a52d7987e3b737be2e" target="_blank" rel="noopener" style="color: var(--blue);">DEFINITIVAMENTE NO EL FUA</a> nova aliança' },
+    { date: "2026-08-29", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra a [gy]" },
+    
+    { date: "2026-08-28", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [pt]" },
+    
+    { date: "2026-08-27", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [pe]" },
+    
     { date: "2026-08-26", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com [na]" },
     { date: "2026-08-26", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra a [ve]" },
     { date: "2026-08-26", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com [ve]" },
     
     { date: "2026-08-25", type: "Internacional", tag: "[noalliance]", text: '<a href="https://app.warera.io/alliance/6a2981ad131983aa8445864d" target="_blank" rel="noopener" style="color: var(--red);">Frente Unido de Autodefensa</a> fim da aliança' },    
+    { date: "2026-08-25", type: "Diplomacia", tag: "[peace]", text: "[br] Brasília é nossa!" },
     
     { date: "2026-08-24", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [sl]" },
     { date: "2026-08-24", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br]: [ua]" },
