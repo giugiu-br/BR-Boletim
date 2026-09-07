@@ -1,5 +1,9 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
+    
+    { date: "2026-08-29", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a9250a52d7987e3b737be2e" target="_blank" rel="noopener" style="color: var(--blue);">M.I.L.F.</a> entraram: [cd], [bf], [ne], [pt], [es], [ve]' },
+    { date: "2026-08-31", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [gw]" },
+    { date: "2026-08-31", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [gw]" },
 
     { date: "2026-08-30", type: "Diplomacia", tag: "[war]", text: "[ci] declarou guerra ao [br]" },
     
