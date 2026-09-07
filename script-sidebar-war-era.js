@@ -1,8 +1,20 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
+
+    { date: "2026-09-03", type: "Diplomacia", tag: "[money]", text: "Envio de 1600 para o [br] de [bs]" }, 
     
-    { date: "2026-08-29", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a9250a52d7987e3b737be2e" target="_blank" rel="noopener" style="color: var(--blue);">M.I.L.F.</a> entraram: [cd], [bf], [ne], [pt], [es], [ve]' },
-    { date: "2026-08-31", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [gw]" },
+    { date: "2026-09-02", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br]: [td] e [es]" },
+    { date: "2026-09-02", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para o [br] de [jm]" },
+    { date: "2026-09-02", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para o [br] de [bs]" },    
+    { date: "2026-09-02", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [co]" },
+    { date: "2026-09-02", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a9250a52d7987e3b737be2e" target="_blank" rel="noopener" style="color: var(--blue);">M.I.L.F.</a> entrou: [td]' },
+    
+    { date: "2026-09-01", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com [rs]" },
+    { date: "2026-09-01", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra ao [bo]" },
+
+    { date: "2026-08-31", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [jm]" },
+    { date: "2026-08-31", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com: [ni], [sv], [cr], [mx], [ht] e [bz]" },
+    { date: "2026-08-31", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a9250a52d7987e3b737be2e" target="_blank" rel="noopener" style="color: var(--blue);">M.I.L.F.</a> entraram: [cd], [bf], [ne], [pt], [es], [ve]' },
     { date: "2026-08-31", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [gw]" },
 
     { date: "2026-08-30", type: "Diplomacia", tag: "[war]", text: "[ci] declarou guerra ao [br]" },
