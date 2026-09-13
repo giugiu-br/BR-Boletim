@@ -1,6 +1,30 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    { date: "2026-09-10", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [sn]" },
+
+    { date: "2026-09-10", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para o [br] de [bs]" },
+    { date: "2026-09-10", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para o [br] de [es]" },
+    { date: "2026-09-10", type: "Diplomacia", tag: "[money]", text: "Envio de 300 para o [br] de [cr]" },
+    { date: "2026-09-10", type: "Diplomacia", tag: "[money]", text: "Envio de 300 para o [br] de [gt]" },
+    { date: "2026-09-10", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para o [br] de [jm]" },
+    { date: "2026-09-10", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para o [br] de [sv]" },
+    { date: "2026-09-10", type: "Diplomacia", tag: "[money]", text: "Envio de 1600 para o [br] de [ve]" },
+    { date: "2026-09-10", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [pt]" },
+    { date: "2026-09-10", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [bo]" },
+    
+    { date: "2026-09-09", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br], [cl], [gy] e [sl]" },
+    
+    { date: "2026-09-08", type: "Diplomacia", tag: "[money]", text: "Envio de 500 para [ve] de [br]" },
+    { date: "2026-09-08", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [sv]" },
+    { date: "2026-09-08", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para o [br] de [mx]" },
+    { date: "2026-09-08", type: "Diplomacia", tag: "[money]", text: "Envio de 600 para o [br] de [ni]" },
+    { date: "2026-09-08", type: "Diplomacia", tag: "[money]", text: "Envio de 500 para o [br] de [ec]" },
+    { date: "2026-09-08", type: "Diplomacia", tag: "[money]", text: "Envio de 800 para o [br] de [jm]" },
+    { date: "2026-09-08", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [es]" },
+
+    { date: "2026-09-07", type: "Diplomacia", tag: "[money]", text: "Envio de 500 para [fi] de [br]" },
+
     { date: "2026-09-06", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [td]" },
     { date: "2026-09-06", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [br] de [bs]" },
 
