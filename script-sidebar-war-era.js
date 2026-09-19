@@ -1,6 +1,23 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    
+    { date: "2026-09-17", type: "Diplomacia", tag: "[nopact]", text: "Fim do Pacto Defensivo do [br] com [bf]" },
+    { date: "2026-09-17", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [ua] de [br]" },
+    
+    { date: "2026-09-16", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [do]" },
+    
+    { date: "2026-09-15", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [td] de [br]" },
+    { date: "2026-09-15", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para o [pt] de [br]" },
+    { date: "2026-09-15", type: "Diplomacia", tag: "[money]", text: "[br] comprou Guiné-Bissau da [ve] por 67" },
+    { date: "2026-09-15", type: "Diplomacia", tag: "[money]", text: "Envio de 750 para o [sr] de [br]" },
+
+    { date: "2026-09-14", type: "Diplomacia", tag: "[money]", text: "Envio de 900 para o [br] de [ec]" },
+    { date: "2026-09-14", type: "Diplomacia", tag: "[money]", text: "Envio de 750 para o [br] de [ni]" },
+    { date: "2026-09-14", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para o [br] de [jm]" },
+    { date: "2026-09-14", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [al]" },
+    { date: "2026-09-14", type: "Diplomacia", tag: "[money]", text: "Envio de 4000 para o [br] de [ve]" },
+    
     { date: "2026-09-13", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para [fi] de [br]" },
 
     { date: "2026-09-11", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [sn]" },
