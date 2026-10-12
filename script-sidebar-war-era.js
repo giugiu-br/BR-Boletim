@@ -1,5 +1,29 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
+
+    { date: "2026-10-11", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [nz]" },
+
+    { date: "2026-10-10", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para [ve] de [br]" },
+    { date: "2026-10-10", type: "Diplomacia", tag: "[war]", text: "[co] declarou guerra para [br]" },
+    { date: "2026-10-10", type: "Diplomacia", tag: "[money]", text: "Envio de 2800 para [vu] de [br]" },
+    { date: "2026-10-10", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra para [ec]" },
+    { date: "2026-10-10", type: "Diplomacia", tag: "[money]", text: "Envio de 1200 para [cd] de [br]" },
+    { date: "2026-10-10", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br], [pg] e [sr]" },
+
+    { date: "2026-10-09", type: "Diplomacia", tag: "[money]", text: "Envio de 500 para [pg] de [br]" },
+    { date: "2026-10-09", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra para [in]" },
+    { date: "2026-10-09", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra para [sr]" },
+    
+    { date: "2026-10-08", type: "Diplomacia", tag: "[money]", text: "Envio de 1800 para [sb] de [br]" },
+    { date: "2026-10-08", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para [na] de [br]" },
+    { date: "2026-10-08", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra para [pg]" },
+    { date: "2026-10-08", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br], [gh], [sb] e [lr]" },
+
+    { date: "2026-10-07", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br], [lt] e [sl]" },
+
+    { date: "2026-10-06", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [cl]" },
+
+    { date: "2026-10-05", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra para o [sb]" },
     
     { date: "2026-10-04", type: "Diplomacia", tag: "[money]", text: "Envio de 500 para o [nz] de [br]" },
     { date: "2026-10-04", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra para o [vu]" },
