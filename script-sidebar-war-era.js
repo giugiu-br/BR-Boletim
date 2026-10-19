@@ -1,6 +1,22 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
+    { date: "2026-10-18", type: "Diplomacia", tag: "[money]", text: "Envio de 1800 para [sb] de [br]" },
+    
+    { date: "2026-10-17", type: "Diplomacia", tag: "[money]", text: "Envio de 2800 para [kr] de [br]" },
+
+    { date: "2026-10-16", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para [ve] de [br]" },
+
+    { date: "2026-10-15", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [pg]" },
+    { date: "2026-10-15", type: "Diplomacia", tag: "[war]", text: "[tt] declarou guerra para [br]" },
+    { date: "2026-10-15", type: "Diplomacia", tag: "[money]", text: "Envio de 6000 para [ve] de [br]" },
+    
+    { date: "2026-10-14", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br], [vu] e [fj]" },
+    { date: "2026-10-14", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para [br] de [rs]" },
+    { date: "2026-10-14", type: "Diplomacia", tag: "[war]", text: "[pg] declarou guerra para [br]" },
+    
+    { date: "2026-10-13", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para [br] de [rs]" },
+
     { date: "2026-10-12", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [hn]" },
     { date: "2026-10-12", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para [am] de [br]" },
     { date: "2026-10-12", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para [id] de [br]" },
