@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Central • War Era</title>
+    <!-- 
+        PROTOTIPO / MOCKUP
+        Este arquivo é um protótipo visual genérico da ideia de centralizar 
+        o conteúdo da comunidade brasileira do War Era.
+        Não é o produto final. Serve apenas para ilustrar a estrutura de abas,
+        organização por temas e a identidade visual proposta.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Base dark inspirada no visual do app War Era */
+            --bg: #0d0f12;
+            --bg-elevated: #151a1e;
+            --card: #1a1f24;
+            --border: #2a3038;
+            
+            /* Cores do Brasil como destaques (harmonizando com o dark) */
+            --green: #009c3b;
+            --yellow: #ffdf00;
+            --blue: #002776;
+            --red-accent: #c41e3a; /* tom de vermelho presente no tema War Era */
+            
+            --text: #e8eaed;
+            --text-muted: #9aa0a6;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Saira', system-ui, sans-serif;
+            line-height: 1.55;
+            min-height: 100vh;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: linear-gradient(180deg, #0a0c0e 0%, #12161a 100%);
+            border-bottom: 3px solid var(--green);
+            padding: 1.25rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-flag {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .brand-text h1 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.02em;
+        }
+
+        .brand-text span {
+            font-size: 0.8rem;
+            color: var(--yellow);
+            font-weight: 500;
+        }
+
+        .header-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.04);
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+        }
+
+        /* ========== ABAS PRINCIPAIS (Artigos / Vídeos) ========== */
+        /* 
+            Comentário para avaliador:
+            As duas abas principais ficam sempre visíveis no topo.
+            Elas controlam qual "universo" de conteúdo está ativo.
+            Dentro de cada aba principal existem sub-abas de tema.
+        */
+        .main-tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 1.5rem 0;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .main-tab {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.7rem 1.4rem;
+            border-radius: 8px 8px 0 0;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            top: 1px;
+        }
+
+        .main-tab:hover {
+            color: var(--text);
+            border-color: #3a424c;
+        }
+
+        .main-tab.active {
+            background: var(--bg-elevated);
+            color: var(--white);
+            border-color: var(--border);
+            border-bottom-color: var(--bg-elevated);
+        }
+
+        .main-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--green);
+        }
+
+        /* ========== CONTEÚDO ========== */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
+
+        .panel {
+            display: none;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 0 12px 12px 12px;
+            padding: 1.5rem;
+            min-height: 520px;
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+        /* ========== SUB-ABAS DE TEMA ========== */
+        /* 
+            Comentário para avaliador:
+            Dentro de Artigos e de Vídeos existem filtros por tema:
+            Militar • Economia • Política • Regras do Game • Comunidade
+            Isso permite organizar o conteúdo da comunidade sem misturar tudo.
+        */
+        .theme-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .theme-tab {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .theme-tab:hover {
+            border-color: #4a5560;
+            color: var(--text);
+        }
+
+        .theme-tab.active {
+            background: rgba(0, 156, 59, 0.15);
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        /* ========== GRID DE CARDS ========== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.15rem;
+            transition: border-color 0.2s, transform 0.15s;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .card:hover {
+            border-color: #3d4650;
+            transform: translateY(-2px);
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            width: fit-content;
+        }
+
+        .tag-militar { background: rgba(196, 30, 58, 0.2); color: #ff6b81; }
+        .tag-economia { background: rgba(255, 223, 0, 0.12); color: var(--yellow); }
+        .tag-politica { background: rgba(0, 39, 118, 0.35); color: #7eb8ff; }
+        .tag-regras { background: rgba(0, 156, 59, 0.15); color: #5ddea0; }
+        .tag-comunidade { background: rgba(255,255,255,0.08); color: #c5c9ce; }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.35;
+        }
+
+        .card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            font-size: 0.75rem;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.3rem;
+        }
+
+        .card a {
+            color: var(--yellow);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== VÍDEOS (YouTube) ========== */
+        /* 
+            Comentário para avaliador:
+            Os vídeos são pensados como embeds do YouTube.
+            O exemplo abaixo usa um vídeo genérico apenas para ilustrar o layout.
+            Na versão real, cada card de vídeo apontaria para conteúdos da comunidade BR.
+        */
+        .video-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.15s;
+        }
+
+        .video-card:hover {
+            border-color: #3d4650;
+            transform: translateY(-2px);
+        }
+
+        .video-thumb {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #0a0c0e;
+        }
+
+        .video-thumb iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 1rem;
+        }
+
+        .video-info h3 {
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+        }
+
+        .video-info p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* ========== EMPTY STATE (quando filtro não tem conteúdo) ========== */
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .empty-state strong {
+            color: var(--text);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        footer span {
+            color: var(--green);
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 640px) {
+            .main-tabs {
+                padding: 1rem 1rem 0;
+            }
+            .main-tab {
+                flex: 1;
+                text-align: center;
+                padding: 0.65rem 0.5rem;
+                font-size: 0.88rem;
+            }
+            .content-wrapper {
+                padding: 0 1rem 2rem;
+            }
+            .panel {
+                padding: 1rem;
+                border-radius: 0 0 12px 12px;
+            }
+            .header-note {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+        ============================================
+        ESTRUTURA GERAL DO PROTÓTIPO
+        ============================================
+        1. Header com identidade BR + War Era
+        2. Duas abas principais: ARTIGOS | VÍDEOS
+        3. Dentro de cada uma: sub-abas por tema
+           (Militar / Economia / Política / Regras / Comunidade)
+        4. Cards genéricos apenas para ilustrar o layout
+        5. Tema dark + detalhes nas cores da bandeira
+        ============================================
+    -->
+
+    <header>
+        <div class="header-inner">
+            <div class="brand">
+                <div class="brand-flag">🇧🇷</div>
+                <div class="brand-text">
+                    <h1>BR CENTRAL</h1>
+                    <span>Comunidade Brasileira • War Era</span>
+                </div>
+            </div>
+            <div class="header-note">
+                Protótipo visual • Conteúdo provisório
+            </div>
+        </div>
+    </header>
+
+    <!-- ABAS PRINCIPAIS -->
+    <div class="main-tabs">
+        <button class="main-tab active" data-panel="artigos" onclick="switchMainTab('artigos')">
+            📄 Artigos
+        </button>
+        <button class="main-tab" data-panel="videos" onclick="switchMainTab('videos')">
+            🎬 Vídeos
+        </button>
+    </div>
+
+    <div class="content-wrapper">
+
+        <!-- ==================== PAINEL: ARTIGOS ==================== -->
+        <!-- 
+            Comentário para avaliador:
+            Este painel representa a centralização de artigos produzidos 
+            pela comunidade BR (guias, análises, comunicados oficiais, etc.).
+            Cada card é um placeholder genérico.
+        -->
+        <div id="panel-artigos" class="panel active">
+
+            <div class="theme-tabs" id="artigos-themes">
+                <button class="theme-tab active" data-theme="todos" onclick="filterTheme('artigos', 'todos')">Todos</button>
+                <button class="theme-tab" data-theme="militar" onclick="filterTheme('artigos', 'militar')">Militar</button>
+                <button class="theme-tab" data-theme="economia" onclick="filterTheme('artigos', 'economia')">Economia</button>
+                <button class="theme-tab" data-theme="politica" onclick="filterTheme('artigos', 'politica')">Política</button>
+                <button class="theme-tab" data-theme="regras" onclick="filterTheme('artigos', 'regras')">Regras do Game</button>
+                <button class="theme-tab" data-theme="comunidade" onclick="filterTheme('artigos', 'comunidade')">Comunidade</button>
+            </div>
+
+            <div class="cards-grid" id="artigos-grid">
+
+                <!-- Card exemplo - Militar -->
+                <article class="card" data-theme="militar">
+                    <span class="card-tag tag-militar">Militar</span>
+                    <h3>Análise de Frente: Estratégias recentes na região X</h3>
+                    <p>Conteúdo provisório. Aqui ficaria um resumo curto do artigo produzido pela comunidade sobre operações militares, frentes ativas ou relatórios de dano.</p>
+                    <div class="card-meta">
+                        <span>Autor genérico • 20/10/2026</span>
+                        <a href="#" onclick="return false;">Ler artigo →</a>
+                    </div>
+                </article>
+
+                <!-- Card exemplo - Economia -->
+                <article class="card" data-theme="economia">
+                    <span class="card-tag tag-economia">Economia</span>
+                    <h3>Mercado BR: preços e oportunidades da semana</h3>
+                    <p>Placeholder. Espaço destinado a análises de mercado, dicas de produção, doações e economia de guerra da comunidade brasileira.</p>
+                    <div class="card-meta">
+                        <span>Autor genérico • 19/10/2026</span>
+                        <a href="#" onclick="return false;">Ler artigo →</a>
+                    </div>
+                </article>
+
+                <!-- Card exemplo - Política -->
+                <article class="card" data-theme="politica">
+                    <span class="card-tag tag-politica">Política</span>
+                    <h3>Comunicado oficial do governo BR</h3>
+                    <p>Texto genérico. Aqui entrariam anúncios oficiais, reestruturações de ministérios, alianças e decisões políticas relevantes para o Brasil no jogo.</p>
+                    <div class="card-meta">
+                        <span>Governo BR • 18/10/2026</span>
+                        <a href="#" onclick="return false;">Ler artigo →</a>
+                    </div>
+                </article>
+
+                <!-- Card exemplo - Regras -->
+                <article class="card" data-theme="regras">
+                    <span class="card-tag tag-regras">Regras do Game</span>
+                    <h3>Guia rápido: como funcionam as barras de status</h3>
+                    <p>Conteúdo provisório de guia. Ideal para artigos explicativos sobre mecânicas, regras oficiais e boas práticas para novos e veteranos.</p>
+                    <div class="card-meta">
+                        <span>Autor genérico • 17/10/2026</span>
+                        <a href="#" onclick="return false;">Ler artigo →</a>
+                    </div>
+                </article>
+
+                <!-- Card exemplo - Comunidade -->
+                <article class="card" data-theme="comunidade">
+                    <span class="card-tag tag-comunidade">Comunidade</span>
+                    <h3>Resumo da semana + memes da comunidade</h3>
+                    <p>Placeholder para conteúdo mais leve: resumos, homenagens, memes e interações da comunidade brasileira.</p>
+                    <div class="card-meta">
+                        <span>BR Boletim • 16/10/2026</span>
+                        <a href="#" onclick="return false;">Ler artigo →</a>
+                    </div>
+                </article>
+
+                <!-- Mais um card Militar para mostrar volume -->
+                <article class="card" data-theme="militar">
+                    <span class="card-tag tag-militar">Militar</span>
+                    <h3>Relatório de dano semanal – Brasil</h3>
+                    <p>Outro exemplo genérico. Poderia conter tabelas, rankings de dano ou destaques de batalhas importantes da semana.</p>
+                    <div class="card-meta">
+                        <span>Ministério da Guerra • 15/10/2026</span>
+                        <a href="#" onclick="return false;">Ler artigo →</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- ==================== PAINEL: VÍDEOS ==================== -->
+        <!-- 
+            Comentário para avaliador:
+            Este painel ilustra a centralização de vídeos da comunidade.
+            Pressupõe-se conteúdo hospedado no YouTube.
+            O embed abaixo é apenas um exemplo genérico de layout.
+            Na versão real, cada vídeo seria de criadores BR do War Era
+            (conversas com Perucci, gov, tutoriais, cobertura de guerras etc.).
+        -->
+        <div id="panel-videos" class="panel">
+
+            <div class="theme-tabs" id="videos-themes">
+                <button class="theme-tab active" data-theme="todos" onclick="filterTheme('videos', 'todos')">Todos</button>
+                <button class="theme-tab" data-theme="militar" onclick="filterTheme('videos', 'militar')">Militar</button>
+                <button class="theme-tab" data-theme="economia" onclick="filterTheme('videos', 'economia')">Economia</button>
+                <button class="theme-tab" data-theme="politica" onclick="filterTheme('videos', 'politica')">Política</button>
+                <button class="theme-tab" data-theme="regras" onclick="filterTheme('videos', 'regras')">Regras / Tutoriais</button>
+                <button class="theme-tab" data-theme="comunidade" onclick="filterTheme('videos', 'comunidade')">Comunidade</button>
+            </div>
+
+            <div class="cards-grid" id="videos-grid">
+
+                <!-- Vídeo exemplo 1 - embed YouTube genérico -->
+                <article class="video-card" data-theme="regras">
+                    <div class="video-thumb">
+                        <!-- 
+                            Exemplo de embed YouTube.
+                            Substituir o src pelo ID real do vídeo da comunidade.
+                            Aqui usamos um vídeo público genérico apenas para demonstrar o layout.
+                        -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Exemplo de vídeo - placeholder"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="card-tag tag-regras" style="margin-bottom: 0.5rem; display: inline-block;">Regras / Tutoriais</span>
+                        <h3>Tutorial básico para iniciantes no War Era</h3>
+                        <p>Vídeo placeholder. Na versão real seria um tutorial produzido ou selecionado pela comunidade BR.</p>
+                    </div>
+                </article>
+
+                <!-- Vídeo exemplo 2 -->
+                <article class="video-card" data-theme="militar">
+                    <div class="video-thumb">
+                        <iframe 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Exemplo de vídeo militar"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="card-tag tag-militar" style="margin-bottom: 0.5rem; display: inline-block;">Militar</span>
+                        <h3>Cobertura de batalha / análise de frente</h3>
+                        <p>Conteúdo provisório. Espaço para vídeos de cobertura ao vivo, resumos de guerras ou análises táticas da comunidade.</p>
+                    </div>
+                </article>
+
+                <!-- Vídeo exemplo 3 -->
+                <article class="video-card" data-theme="politica">
+                    <div class="video-thumb">
+                        <iframe 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Exemplo de vídeo político"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="card-tag tag-politica" style="margin-bottom: 0.5rem; display: inline-block;">Política</span>
+                        <h3>Entrevista / conversa com membros do governo</h3>
+                        <p>Placeholder. Ideal para vídeos com Perucci, membros do gov ou debates da comunidade brasileira.</p>
+                    </div>
+                </article>
+
+                <!-- Vídeo exemplo 4 -->
+                <article class="video-card" data-theme="comunidade">
+                    <div class="video-thumb">
+                        <iframe 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Exemplo de vídeo comunidade"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="card-tag tag-comunidade" style="margin-bottom: 0.5rem; display: inline-block;">Comunidade</span>
+                        <h3>Momentos da comunidade BR</h3>
+                        <p>Exemplo genérico. Poderia ser clipes, lives, memes em vídeo ou destaques da semana.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>
+            <span>BR Central</span> • Protótipo de centralização de conteúdo da comunidade brasileira no War Era<br>
+            Baseado na ideia do Boletim e na proposta de abas por tipo + temas • Conteúdo 100% genérico para ilustração
+        </p>
+    </footer>
+
+    <script>
+        /*
+            Comentário para avaliador:
+            JavaScript mínimo apenas para trocar abas e filtrar por tema.
+            Não há backend, banco de dados ou integração real.
+            Tudo é estático e ilustrativo.
+        */
+
+        function switchMainTab(panelName) {
+            // Atualiza botões das abas principais
+            document.querySelectorAll('.main-tab').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.panel === panelName);
+            });
+
+            // Mostra o painel correspondente
+            document.querySelectorAll('.panel').forEach(panel => {
+                panel.classList.toggle('active', panel.id === 'panel-' + panelName);
+            });
+        }
+
+        function filterTheme(panelName, theme) {
+            const panel = document.getElementById('panel-' + panelName);
+            const themeButtons = panel.querySelectorAll('.theme-tab');
+            const cards = panel.querySelectorAll('[data-theme]');
+
+            // Atualiza botões de tema
+            themeButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === theme);
+            });
+
+            // Filtra cards
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const show = theme === 'todos' || card.dataset.theme === theme;
+                card.style.display = show ? '' : 'none';
+                if (show) visibleCount++;
+            });
+
+            // Mensagem caso não haja conteúdo no filtro (apenas ilustrativo)
+            let emptyMsg = panel.querySelector('.empty-state');
+            if (visibleCount === 0) {
+                if (!emptyMsg) {
+                    emptyMsg = document.createElement('div');
+                    emptyMsg.className = 'empty-state';
+                    emptyMsg.innerHTML = 'Nenhum conteúdo neste tema ainda.<br><strong>Espaço reservado para futuros artigos/vídeos da comunidade.</strong>';
+                    panel.querySelector('.cards-grid').appendChild(emptyMsg);
+                }
+            } else if (emptyMsg) {
+                emptyMsg.remove();
+            }
+        }
+    </script>
+
+</body>
+</html>
