@@ -2,7 +2,7 @@
 const weeklyEvents = [
 
     
-    { date: "2026-10-25", type: "Eleições", text: "[br] fez o L" },
+    { date: "2026-10-25", type: "Eleições", tag: "[alert]", text: " [br] fez o L" },
     { date: "2026-10-25", type: "Diplomacia", tag: "[nopact]", text: "Fim de Pacto Defensivo entre [br], [do], [td] e [cd]" },
     { date: "2026-10-25", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para [id] de [br]" },
     { date: "2026-10-25", type: "Diplomacia", tag: "[money]", text: "Envio de 1800 para [sb] de [br]" },
