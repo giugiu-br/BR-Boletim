@@ -1,5 +1,17 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
+    
+    { date: "2026-10-31", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [ci]" },
+    { date: "2026-10-31", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [lv]" },
+    { date: "2026-10-31", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [be]" },
+
+    { date: "2026-10-27", type: "Diplomacia", tag: "[war]", text: "[be] declarou guerra para [br]" },
+    { date: "2026-10-27", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [co]" },
+    { date: "2026-10-27", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [ec]" },
+    { date: "2026-10-27", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [it]" },
+    { date: "2026-10-27", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [us]" },
+    { date: "2026-10-27", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [id]" },
+    { date: "2026-10-27", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [ar]" },
 
     { date: "2026-10-26", type: "Diplomacia", tag: "[money]", text: "Envio de 1300 para [fr] de [br]" },
     { date: "2026-10-26", type: "Diplomacia", tag: "[money]", text: "Envio de 2800 para [fj] de [br]" },
