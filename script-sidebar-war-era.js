@@ -1,5 +1,23 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
+    
+    { date: "2026-11-15", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para [td] de [br]" },
+    { date: "2026-11-15", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para [hn] de [br]" },
+    { date: "2026-11-15", type: "Diplomacia", tag: "[money]", text: "Envio de 2500 para [es] de [br]" },
+    { date: "2026-11-15", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [uz]" },
+    
+    { date: "2026-11-14", type: "Diplomacia", tag: "[money]", text: "Envio de 1000 para [pt] de [br]" },
+    
+    { date: "2026-11-13", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a9250a52d7987e3b737be2e" target="_blank" rel="noopener" style="color: var(--blue);">M.I.L.F.</a> entrou: [va] e [uz]' },
+
+    { date: "2026-11-12", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [td]" },
+    
+    { date: "2026-11-11", type: "Diplomacia", tag: "[nopact]", text: "Fim de Pacto Defensivo entre [br] e [at]" },
+    { date: "2026-11-11", type: "Internacional", tag: "[alliance]", text: '<a href="https://app.warera.io/alliance/6a9250a52d7987e3b737be2e" target="_blank" rel="noopener" style="color: var(--blue);">M.I.L.F.</a> entrou: [ht] e [cv]' },
+
+    { date: "2026-11-10", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra para [lb] e [ci]" },
+    
+    { date: "2026-11-09", type: "Diplomacia", tag: "[money]", text: "Envio de 3000 para [es] de [br]" },
 
     { date: "2026-11-08", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para [pt] de [br]" },
     { date: "2026-11-08", type: "Diplomacia", tag: "[money]", text: "Envio de 205 para [br] de [pg]" },
