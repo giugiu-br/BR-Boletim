@@ -1,7 +1,14 @@
 // Banco de dados centralizado do Sidebar
 const weeklyEvents = [
 
-    { date: "2026-11-31", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [ci]" },
+    { date: "2026-11-19", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para [ne] de [br]" },
+
+    { date: "2026-11-18", type: "Diplomacia", tag: "[money]", text: "Envio de 2000 para [ne] de [br]" },
+
+    { date: "2026-11-17", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para [td] de [br]" },
+    { date: "2026-11-17", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra para [py]" },
+    { date: "2026-11-17", type: "Diplomacia", tag: "[money]", text: "Envio de 1500 para [fj] de [br]" },
+    { date: "2026-11-17", type: "Diplomacia", tag: "[peace]", text: "Paz entre [br] e [mv]" },
 
     { date: "2026-11-16", type: "Diplomacia", tag: "[war]", text: "[br] declarou guerra para [ml]" },
     { date: "2026-11-16", type: "Diplomacia", tag: "[pact]", text: "Pacto Defensivo entre [br] e [cv]" },
